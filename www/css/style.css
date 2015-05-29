@@ -1,0 +1,218 @@
+.main_logo{
+	height: 190px;
+ padding-top:0px;
+}
+.main_logo_signup{
+	height:150px;
+}
+.dices{
+	height:100px;
+	margin-top: 60px
+}
+.login-form {
+  text-align: center;
+  width: 90%;
+  margin: 10px auto 0;
+}
+
+input[type=email], input[type=password] {
+  display: block;
+  width: 100%;
+  margin: 5px auto;
+  outline: #000;
+  border-color: #000;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.login-button {
+  width: 100%;
+  margin-top: -30px;
+}
+
+.forgot-password {
+  display: block;
+  margin: 0px;
+  font-size: 14px;
+  color:#000;
+}
+.login_buttons_list_google{
+	margin: 0 0 10px 0;
+	width: 100%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: #FF1919;
+	color: #fff;
+	font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+	font-weight: 200;
+}
+.login_buttons_list_fb{
+	margin: 0 0 10px 0;
+	width: 100%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: #6600FF;
+	color: #fff;
+	font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+.login_buttons_list_id{
+	margin: 0 0 10px 0;
+	width: 100%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color:#003366;
+	color: #fff;
+	font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+.login_buttons_list_signup{
+	margin: 0 0 10px 0;
+	width: 100%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color:#000;
+	color: #fff;
+	font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+.login_buttons_list_enter{
+	position: absolute;
+  bottom: 0px;
+	width: 100%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color:#000;
+	color: #fff;
+	font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+.button--large--cta {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 17px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  height: auto;
+  text-decoration: none;
+  padding: 4px 10px;
+  font-size: 17px;
+  line-height: 32px;
+  letter-spacing: 0;
+  color: #fff;
+  vertical-align: middle;
+  background-color: rgba(1,7,15,0.81);
+  border: 0px solid currentColor;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+  border: none;
+  background-color: #010b0f;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 36px;
+  padding: 4px 12px;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+.button--large--cta:hover {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+.button--large--cta:focus {
+  outline: 0;
+}
+.button--large--cta:active {
+  color: #fff;
+  background-color: #010b0f;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+  opacity: 0.2;
+}
+.button--large--cta:disabled,
+.button--large--cta[disabled] {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;}
+/* sign up form*/
+
+
+.form-row {
+  margin: 4px;  
+}
+
+.width-full {
+  width: 100%;
+}
+
+.width-half {
+  width: 48%;
+}
+
+.lucent {
+  opacity: 0.4;
+}
+.first{
+ border:1px solid;
+ border-radius: 5px;
+  border-color: #000;
+  outline: #000;
+  padding-left: 10px;
+  padding-right: 10px;	
+   margin: 4px;  
+}
+.note {
+  margin: 12px 8px;
+  font-size: 13px;
+}
+
+.vspc {
+  margin-top: 20px;
+}
+
+.formarea {
+  width: 90%;
+  margin: 10px auto 0px auto;
+}
+
+input[type=text],
+input[type=password],input[type=email] {
+  display: block;
+  width: 100%;
+  margin: 5px auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.second{
+ border:1px solid;
+ border-radius: 5px;
+  border-color: #000;
+}
