@@ -1,3 +1,5 @@
+/* This is a CSS file */
+
 #title
 {
     color:#000000;
@@ -94,4 +96,45 @@ opacity: 0.2;
 .button--large--cta[disabled] {
 opacity: 0.3;
 cursor: default;
-pointer-events: none;}
+pointer-events: none;
+}
+.icon{
+    height:30px;
+    padding: 10px;
+}
+.dices{
+    height:87px;
+    margin-top: 0px
+}
+.trophy{
+    height: 100px;
+    padding:10px;
+}
+.spanner{
+    height:85px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.flight{
+    height: 85px;
+    padding:10px;
+}
+.mic{
+    height:85px;
+    padding: 10px;
+}
+.calendar{
+    height: 100px;
+    padding:20px;
+}
+.phone{
+    height:75px;
+    padding: 20px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+.divi{
+       margin-left: auto;
+    margin-right: auto; 
+}
