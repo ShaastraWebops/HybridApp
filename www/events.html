@@ -11,30 +11,31 @@
     </script>
 </head>
 <body>
-    <ons-tabbar var="tabbar" id="tab">
-        <ons-tabbar-item
-            icon="home"
-            label="Home"
-            page="eventdisp.html"
-            active="true"></ons-tabbar-item>
-        <ons-tabbar-item
-            icon="search"
-            label="Search"
-            page="eventdisp.html"></ons-tabbar-item>
-        <ons-tabbar-item
-            icon="filter"
-            label="Filter"
-            page="eventdisp.html"></ons-tabbar-item>
-        <ons-tabbar-item
-            icon="ion-android-star-outline"
-            label="Favourites"
-            page="favourites.html"></ons-tabbar-item>
-        <ons-tabbar-item
-            icon="fa fa-ellipsis-h"
-            label="More"
-            page="eventdisp.html"></ons-tabbar-item>
+    <ons-tabbar>
+      <ons-tab page="eventdisp.html">
+        <ons-icon icon="ion-android-home" class="tab-icon">
+        </ons-icon>
+      </ons-tab>
+
+
+      <ons-tab page="eventdisp.html" active="true">
+        <ons-icon icon="ion-android-search" class="tab-icon">
+        </ons-icon>
+      </ons-tab>
+
+      <ons-tab page="eventdisp.html">
+        <ons-icon icon="ion-ios-color-filter" class="tab-icon">
+        </ons-icon>
+      </ons-tab>
+      <ons-tab page="eventdisp.html">
+        <ons-icon icon="ion-android-favorite" class="tab-icon">
+        </ons-icon>
+      </ons-tab>
+      <ons-tab page="eventdisp.html">
+        <ons-icon icon="ion-ios-more" class="tab-icon">
+        </ons-icon>
+      </ons-tab>
     </ons-tabbar>
 
 </body>
 </html>
-
