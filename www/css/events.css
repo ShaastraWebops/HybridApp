@@ -10,6 +10,17 @@
     display: block;
 }
 
+.navigation-bar
+{
+    border-color: #f9f9f9;
+    background-color: #f9f9f9;
+}
+
+#bars,#back
+{
+    color: #000;
+}
+
 ons-tabbar-item
 {
     background-color: #00465F;
@@ -143,15 +154,17 @@ pointer-events: none;
    z-index: 0;
 }
 .center_bar{
-    background-color: #000099;
+    background-color: #fff;
+    color: #000;
     text-align: center;
     margin-top: -6px;
     z-index: 3;
 }
 .center_text{
-    color: white;
+    color: #000;
    position:absolute;
     left: 27.5%;
+    font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 /*event page*/
 .list-item-container {
@@ -159,7 +172,7 @@ pointer-events: none;
   font-size: 14px;
   padding: 15px 0px 15px 15px;
   color: white;
-  background-color: #000099;
+  background-color: #00465F;
   margin: 10px;
 }
 
