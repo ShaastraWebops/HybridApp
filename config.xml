@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns="http://www.w3.org/ns/widgets" id="com.example.helloworld" version="1.0.0">
-  <name>shaastra</name>
+  <name>Shaastra Hybrid App</name>
   <description>Hello World App</description>
   <author/>
+  <access origin="*"/>
   <content src="index.html"/>
   <preference name="loglevel" value="DEBUG"/>
   <preference name="AndroidLaunchMode" value="singleTop"/>
+  <preference name="BackgroundColor" value="0xffffffff"/>
+  <preference name="DisallowOverscroll" value="true"/>
   <preference name="ErrorUrl" value=""/>
+  <preference name="Fullscreen" value="false"/>
+  <preference name="KeepRunning" value="true"/>
+  <preference name="monaca:WebViewEngine" value="default"/>
   <preference name="SplashScreen" value="screen"/>
+  <preference name="SplashScreenDelay" value="1000"/>
+  <preference name="Orientation" value="default"/>
   <preference name="monaca:DisableCookie" value="false"/>
+  <preference name="monaca:AndroidIsPackageNameSeparate" value="false"/>
   <feature name="App">
     <param name="android-package" value="org.apache.cordova.App"/>
   </feature>
@@ -32,13 +41,4 @@
   </feature>
   <preference name="monaca:targetFamilyiPhone" value="1"/>
   <preference name="monaca:targetFamilyiPad" value="1"/>
-  <access origin="*"/>
-  <preference name="KeepRunning" value="true"/>
-  <preference name="monaca:AndroidIsPackageNameSeparate" value="false"/>
-  <preference name="DisallowOverscroll" value="true"/>
-  <preference name="monaca:WebViewEngine" value="default"/>
-  <preference name="Orientation" value="default"/>
-  <preference name="SplashScreenDelay" value="2500"/>
-  <preference name="Fullscreen" value="false"/>
-  <preference name="BackgroundColor" value="0xffffffff"/>
 </widget>
