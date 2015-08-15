@@ -1,16 +1,21 @@
+<ons-toolbar>
+        <div class="left">
+            <ons-toolbar-button ng-click="menu.toggleMenu()"><ons-icon id="bars" icon="bars"></ons-icon></ons-toolbar-button>
+        </div>
+        
+        <div class="center"></div>
+</ons-toolbar>
+
 <ons-page>
-
-
     <div style="text-align: center">
         <img src="images/shaastra_main_log.png" class="main_logo">
     </div>
-          <div class="login-form">
-
+    <div class="login-form">
         <input type="email" class="text-input" placeholder="User name, Email or Shaastra Id" value="">
         <input type="password" class="text-input" placeholder="Password" value="">
         <br><br>
         <button class="button--large--cta" >Log In</button>
         <br><br>
         <ons-button modifier="quiet" class="forgot-password">Forgot password?</ons-button>
-      </div>
+    </div>
 </ons-page>

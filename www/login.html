@@ -1,30 +1,59 @@
+
+
 <ons-page>
+<ons-toolbar>
+        <div class="left">
+            <ons-toolbar-button ng-click="menu.toggleMenu()"><ons-icon id="bars" icon="bars"></ons-icon></ons-toolbar-button>
+        </div>
+        
+        <div class="center"></div>
+</ons-toolbar>
+<div style="text-align: center;height:100%;">
 
+    <img src="images/shaastra_dices.png" class="dices">
+    
+    <ul class="list" style="text-align:center;">
+    
+        <br>
+        
+        <span style="font-size:0.9em;margin-top:10px;margin-bottom:5px;">Choose an account to log in with</span>
+        <br><br>
+        
+        
+        <li class="list__item list__item--tappable login_buttons_list_google" style="text-align:center">
+          <ons-icon icon="ion-social-googleplus 96" style="padding-right:10px;padding-top:10px;padding-bottom:10px"></ons-icon>
+           Login with Google +
+        </li>
+        
+        <li class="list__item list__item--tappable login_buttons_list_fb" style="text-align:center">
+          <ons-icon icon="ion-social-facebook" style="padding-right:10px"></ons-icon>
+                  Login with Facebook
+        </li>
+        
+        <li class="list__item list__item--tappable login_buttons_list_id" style="text-align:center">
+          <ons-icon icon="ion-ios-contact" style="padding-right:10px"></ons-icon>
+                  Login with Shaastra ID
+        </li>
+      
+        
+        <br>
+        <span style="font-size:0.9em;"><b>Don't have a Shaastra Id yet?</b></span>
+        
+        
+        <br>
+        
+        <li class="list__item list__item--tappable login_buttons_list_signup" style="text-align:center">
+          <ons-icon icon="ion-thumbsup" style="padding-right:10px;padding-top:5px;"></ons-icon>
+                  Register with Shaastra
+        </li>
+        
+        <li class="list__item list__item--tappable login_buttons_list_enter" style="text-align:center">
+                Continue without signing 
+                <ons-icon icon="ion-android-arrow-forward" style="padding-left:10px"></ons-icon>
+        </li>
+          
+    </ul>
+    
+</div>
 
-    <div style="text-align: center;height:100%;">
-        <img src="images/shaastra_dices.png" class="dices">
-<ul class="list" style="text-align:center;">
-  <li class="list__item list__item--tappable login_buttons_list_google" style="text-align:center">
-  <ons-icon icon="ion-social-googleplus 96" style="padding-right:10px;padding-top:10px;padding-bottom:10px"></ons-icon>
-   Login with Google +
-  </li>
-  <li class="list__item list__item--tappable login_buttons_list_fb" style="text-align:center">
-  <ons-icon icon="ion-social-facebook" style="padding-right:10px"></ons-icon>
-          Login with Facebook
-  </li>
-    <li class="list__item list__item--tappable login_buttons_list_id" style="text-align:center">
-  <ons-icon icon="ion-ios-contact" style="padding-right:10px"></ons-icon>
-          Login with Shaastra ID
-  </li>
-     Dont have a Shaastra Id yet?
-  <li class="list__item list__item--tappable login_buttons_list_signup" style="text-align:center">
-  <ons-icon icon="ion-thumbsup" style="padding-right:10px"></ons-icon>
-          Sign up for Shaastra
-  </li>
-    <li class="list__item list__item--tappable login_buttons_list_enter" style="text-align:center">
-        Continue without signing 
-        <ons-icon icon="ion-android-arrow-forward" style="padding-left:10px"></ons-icon>
-  </li>
-</ul>
-    </div>
 </ons-page>

@@ -10,7 +10,15 @@
         ons.bootstrap();
     </script>
 </head>
+
 <body>
+    <ons-toolbar>
+        <div class="left">
+            <ons-toolbar-button ng-click="menu.toggleMenu()"><ons-icon id="bars" icon="bars"></ons-icon></ons-toolbar-button>
+        </div>
+        
+        <div class="center"></div>
+    </ons-toolbar>
     <ons-tabbar>
       <ons-tab page="eventdisp.html">
         <ons-icon icon="ion-android-home" class="tab-icon">

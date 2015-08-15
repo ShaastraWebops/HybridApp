@@ -1,15 +1,27 @@
-<ons-modal var="modal">
-<img src="images/tick.png" alt="" ng-click="close()"class="modal_image"/>
-</ons-modal>
-<ons-navigator>
-<ons-page ng-controller="signupcontroller">
 
+<ons-modal var="modal">
+<img src="images/tick.png" alt="" ng-click="modal.hide()" style="max-width:100%;
+max-height:100%;" class="modal_image"/>
+</ons-modal>
+
+<ons-toolbar>
+        <div class="left">
+            <ons-toolbar-button ng-click="menu.toggleMenu()"><ons-icon id="bars" icon="bars"></ons-icon></ons-toolbar-button>
+        </div>
+        
+        <div class="center"></div>
+</ons-toolbar>
+
+<ons-navigator>
+
+<ons-page ng-controller="signupcontroller">
 
     <div style="text-align: center">
         <img src="images/shaastra_main_log.png" class="main_logo_signup">
     </div>
 
-      <div class="formarea">
+    <div class="formarea">
+    
         <div class="first" >
           <input type="text" class="text-input--underbar width-full" placeholder="First Name" value="">
           <input type="text" class="text-input--underbar width-full" placeholder="Last Name" value="" style="border-width-left: 1px">
@@ -20,12 +32,14 @@
         </div>
 
         <div class="form-row">
-          <input type="password" class="text-input" placeholder="Password -Atleast six characters" value="">
+          <input type="password" class="text-input" placeholder="Password (atleast six characters)" value="">
         </div>
 
         <div class="vspc form-row">
           <ons-button modifier="large--cta" ng-click="modal.show()">Register</ons-button>
         </div>
-      </div>
+        
+     </div>
+     
 </ons-page>
 </ons-navigator>
