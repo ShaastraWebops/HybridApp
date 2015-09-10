@@ -1,0 +1,54 @@
+<ons-page ng-controller="MapController">
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button ng-click="menu.toggle()">
+            <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">IITM MAP</div>
+        <div class="right">
+           <span id="top-right" ng-click="show('#top-right')" class="toolbar-button--outline navigation-bar__line-height">Details of locations</span>
+          </div>
+      </ons-toolbar>
+    
+
+    <div id="map_canvas"></div>
+
+
+     <p class="par-search">
+            <input type="hidden" id="search" value="{{ formData.destiny }}" class="search-input search-input-map">
+        </p>
+
+     <div align = "center">
+ <div class="button-bar" style="width:280px;">
+  <div class="button-bar__item">
+    <input type="radio"  name="destiny" value="Central lecture Theater,IIT madras" ng-model="formData.destiny">
+    <button class="button-bar__button">CLT</button>
+  </div>
+
+  <div class="button-bar__item">
+    <input type="radio" name="destiny" value="Students Activity Centre,IIT madras" ng-model="formData.destiny">
+    <button class="button-bar__button">SAC</button>
+  </div>
+
+  <div class="button-bar__item">
+    <input type="radio" name="destiny" value="Open Air Theater,IIT madras" ng-model="formData.destiny">
+    <button class="button-bar__button">OAT</button>
+  </div>
+
+  
+</div>
+</div>
+
+
+
+    
+      
+     <div class = "btnmax">
+    <div class="button-bar__item">
+    <button class="button-bar__button" style="width:280px;color:white;background-color:blue;" ng-click ="calcRoute()"><strong>Confirm Location</strong></button>
+            </div>
+
+     </div>
+
+    </ons-page>
