@@ -1,17 +1,22 @@
 // This is a JavaScript file
 var module = angular.module('app', ['onsen']);
-module.controller('signupcontroller',function($scope){
+module.controller('signupcontroller',function($scope, $http){
     $scope.close = function(){
         modal.close()
-    }
+    };
+    ons.ready(function($scope, $http) {
+         console.log("My first requests")
+          $http.get('http://www.w3schools.com/angular/customers.php').success(function(response) {
+         $scope.names = response.records;
+
+          });
+       });
     });
 
           //Map controller
 module.controller('MapController', function($scope, $timeout){
 
-     ons.ready(function() {
-         console.log("My first requests")
-       });
+   
 
        ons.createPopover('popover.html').then(function(popover) {
         $scope.popover = popover;
