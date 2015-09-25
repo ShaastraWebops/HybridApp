@@ -9,7 +9,9 @@ module.controller('signupcontroller',function($scope){
           //Map controller
 module.controller('MapController', function($scope, $timeout){
 
-      console.log("My first requests");
+     ons.ready(function() {
+         console.log("My first requests")
+       });
 
        ons.createPopover('popover.html').then(function(popover) {
         $scope.popover = popover;
@@ -47,7 +49,7 @@ module.controller('MapController', function($scope, $timeout){
                       title: 'Hello World!',
                       animation:google.maps.Animation.BOUNCE
                   }); 
-                    google.maps.event.addListener(current, 'click', function() {                ons.notification.alert({
+                    google.maps.event.addListener(current, 'click', function() {  ons.notification.alert({
                         message: 'You are here'
                     });});  
                 },error,options)};
