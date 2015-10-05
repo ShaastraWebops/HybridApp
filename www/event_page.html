@@ -1,20 +1,26 @@
 <ons-page>
-    
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.11/angular.min.js"></script>
+    <script type="text/javascript" src="controller.js"></script>
+</head>
+
+<body ng-app="app" ng-controller="eventlist">
 <ons-toolbar>
-        <div class="center">DESIGN AND BUILD</div>
+        <div class="center">{{currinfo}}</div>
         <div class="left">
           <ons-toolbar-button ng-click="menu.toggleMenu()"><ons-icon id="bars" icon="bars"></ons-icon></ons-toolbar-button>
         </div>
       </ons-toolbar>
       <div class="profile-card">
-        <img src="images/designandbuild.jpg" class="event-image">
+        <img ng-src="{{currimage}}" class="event-image">
       </div>
     
         <ons-list>
-        </ons-list-item>
-        <ons-list-item modifier="chevron" class="list-item-container">
+        
+        <ons-list-item modifier="chevron" class="list-item-container" ng-click="next()">
           <div class="list-item-left">
-            <img src="images/aerofest.jpg" class="avator">
+            <img ng-src="{{currimage}}" class="avator">
           </div>
           <div class="list-item-right">
             <div class="list-item-content">
@@ -31,7 +37,7 @@
 
         <ons-list-item modifier="chevron" class="list-item-container">
           <div class="list-item-left">
-            <img src="images/aerofest.jpg" class="avator">
+            <img ng-src="{{currimage}}" class="avator">
           </div>
           <div class="list-item-right">
             <div class="list-item-content">
@@ -48,7 +54,7 @@
 
         <ons-list-item modifier="chevron" class="list-item-container">
           <div class="list-item-left">
-            <img src="images/aerofest.jpg" class="avator">
+            <img ng-src="{{currimage}}" class="avator">
           </div>
           <div class="list-item-right">
             <div class="list-item-content">
@@ -65,7 +71,7 @@
 
         <ons-list-item modifier="chevron" class="list-item-container">
           <div class="list-item-left">
-            <img src="images/aerofest.jpg" class="avator">
+            <img ng-src="{{currimage}}" class="avator">
           </div>
           <div class="list-item-right">
             <div class="list-item-content">
@@ -80,4 +86,5 @@
           </div>
         </ons-list-item>
       </ons-list>
+  </body>
 </ons-page>
