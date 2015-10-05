@@ -1,5 +1,6 @@
 // This is a JavaScript file
-var module = angular.module('app', ['onsen']);
+var module = angular.module('app', []);
+
 module.controller('signupcontroller',function($scope, $http){
     $scope.close = function(){
         modal.close()
@@ -13,6 +14,51 @@ module.controller('signupcontroller',function($scope, $http){
        });
     });
 
+
+module.controller('eventlist',function($scope, $http)
+{
+  var currid = sessionStorage.currevent;
+
+  $http.get('http://shaastra.org:8001/api/eventLists/events/'+currid).success(function(response) 
+  {
+       $scope.currinfo=response.info;
+       var imgid=response.imageid;
+       var imgname=response.imagename;
+       $scope.currimage= "http://shaastra.org:8001/api/uploads/"+imgid+"/"+imgname;
+       console.log(JSON.stringify(response));
+  })
+  .error(
+    function(response)
+    {
+      console.log("error:"+ response.error_message);
+    });
+
+  $scope.next=function()
+  {
+    window.location.assign('./events.html');
+  }
+});
+
+module.controller('events',function($scope, $http)
+{
+    $http.get('http://shaastra.org:8001/api/eventLists').success(function(response) 
+    {
+        console.log(response);
+        $scope.eventcats = response;
+    })
+    .error(
+    function(response)
+    {
+      console.log("error:"+ response.error_message);
+    });
+
+    $scope.info=function(s)
+    {
+      console.log(s);
+      sessionStorage.currevent = s;
+      window.location.assign('./event_page.html');
+    }
+});
           //Map controller
 module.controller('MapController', function($scope, $timeout){
 
