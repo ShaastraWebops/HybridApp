@@ -1,5 +1,5 @@
 // This is a JavaScript file
-var module = angular.module('app', []);
+var module = angular.module('app', ['onsen']);
 
 module.controller('signupcontroller',function($scope, $http){
     $scope.close = function(){
