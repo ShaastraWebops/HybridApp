@@ -15,16 +15,20 @@ module.controller('signupcontroller',function($scope, $http){
     });
 
 
-module.controller('eventlist',function($scope, $http)
+module.controller('eventlist',function($scope, $http,$rootScope)
 {
-  var currid = sessionStorage.currevent;
+  var currid = $rootScope.currevent;
+  console.log(currid);
 
   $http.get('http://shaastra.org:8001/api/eventLists/events/'+currid).success(function(response) 
   {
+
        $scope.currinfo=response.info;
+       console.log($scope.currinfo);
        var imgid=response.imageid;
        var imgname=response.imagename;
        $scope.currimage= "http://shaastra.org:8001/api/uploads/"+imgid+"/"+imgname;
+       $scope.events=response.events;
        console.log(JSON.stringify(response));
   })
   .error(
@@ -39,7 +43,7 @@ module.controller('eventlist',function($scope, $http)
   }
 });
 
-module.controller('events',function($scope, $http)
+module.controller('events',function($scope, $http,$rootScope)
 {
     $http.get('http://shaastra.org:8001/api/eventLists').success(function(response) 
     {
@@ -54,9 +58,10 @@ module.controller('events',function($scope, $http)
 
     $scope.info=function(s)
     {
-      console.log(s);
-      sessionStorage.currevent = s;
-      window.location.assign('./event_page.html');
+      //console.log(s);
+      $rootScope.currevent = s;
+      $scope.menu.setMainPage('event_page.html', {closeMenu: true});
+      //window.location.assign('./event_page.html');
     }
 });
           //Map controller

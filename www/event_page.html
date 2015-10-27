@@ -5,86 +5,34 @@
     <script type="text/javascript" src="controller.js"></script>
 </head>
 
-<body ng-app="app" ng-controller="eventlist">
-<ons-toolbar>
-        <div class="center">{{currinfo}}</div>
-        <div class="left">
-          <ons-toolbar-button ng-click="menu.toggleMenu()"><ons-icon id="bars" icon="bars"></ons-icon></ons-toolbar-button>
-        </div>
-      </ons-toolbar>
-      <div class="profile-card">
+<body ng-app="app" >
+  <div ng-controller="eventlist">
+    <div class="profile-card">
         <img ng-src="{{currimage}}" class="event-image">
       </div>
     
         <ons-list>
-        
+        <div ng-repeat="event in events">
         <ons-list-item modifier="chevron" class="list-item-container" ng-click="next()">
           <div class="list-item-left">
-            <img ng-src="{{currimage}}" class="avator">
+            <img ng-src="http://shaastra.org:8001/api/uploads/{{event.imageid}}/{{event.imagename}}" class="avator" style="width:50px;height:50px;">
           </div>
           <div class="list-item-right">
-            <div class="list-item-content">
-        <div class="name">AERO-FEST
+            <div class="list-item-content" style="margin-left:60px;">
+        <div class="name">{{event.name}}
               </div>
-              <span class="desc">DAY 2 || Sat || 6:00 pm{prelims}</span>
+              <div class="desc">
+              {{event.info}}  
+              </div>
               <br>
-              <span class="desc">SAC</span>
-              <br>
-              <span class="desc">Preregistered</span>
+              <div class="plan-info">
+                <ons-icon icon="fa-map-marker"></ons-icon> {{event.venue}}
+              </div>
             </div>
           </div>
         </ons-list-item>
-
-        <ons-list-item modifier="chevron" class="list-item-container">
-          <div class="list-item-left">
-            <img ng-src="{{currimage}}" class="avator">
-          </div>
-          <div class="list-item-right">
-            <div class="list-item-content">
-                    <div class="name">AERO-FEST
-              </div>
-              <span class="desc">DAY 1 || Sat || 6:00 pm{prelims}</span>
-              <br>
-              <span class="desc">SAC</span>
-              <br>
-              <span class="desc">Preregistered</span>
-            </div>
-          </div>
-        </ons-list-item>
-
-        <ons-list-item modifier="chevron" class="list-item-container">
-          <div class="list-item-left">
-            <img ng-src="{{currimage}}" class="avator">
-          </div>
-          <div class="list-item-right">
-            <div class="list-item-content">
-                    <div class="name">AERO-FEST
-              </div>
-              <span class="desc">DAY 2 || Sat || 6:00 pm{prelims}</span>
-              <br>
-              <span class="desc">SAC</span>
-              <br>
-              <span class="desc">Preregistered</span>
-            </div>
-          </div>
-        </ons-list-item>
-
-        <ons-list-item modifier="chevron" class="list-item-container">
-          <div class="list-item-left">
-            <img ng-src="{{currimage}}" class="avator">
-          </div>
-          <div class="list-item-right">
-            <div class="list-item-content">
-                    <div class="name">AERO-FEST
-              </div>
-              <span class="desc">DAY 2 || Sat || 6:00 pm{prelims}</span>
-              <br>
-              <span class="desc">SAC</span>
-              <br>
-              <span class="desc">Preregistered</span>
-            </div>
-          </div>
-        </ons-list-item>
+        </div>
       </ons-list>
+  </div>      
   </body>
 </ons-page>
