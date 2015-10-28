@@ -3,10 +3,10 @@ var module = angular.module('app', ['onsen']);
 
 module.controller('signupcontroller',function($scope, $http){
     $scope.close = function(){
-        modal.close()
+        modal.close();
     };
     ons.ready(function($scope, $http) {
-         console.log("My first requests")
+         console.log("My first requests");
           $http.get('http://www.w3schools.com/angular/customers.php').success(function(response) {
          $scope.names = response.records;
 
@@ -24,12 +24,12 @@ module.controller('eventlist',function($scope, $http,$rootScope)
   {
 
        $scope.currinfo=response.info;
-       console.log($scope.currinfo);
+       //console.log($scope.currinfo);
        var imgid=response.imageid;
        var imgname=response.imagename;
        $scope.currimage= "http://shaastra.org:8001/api/uploads/"+imgid+"/"+imgname;
        $scope.events=response.events;
-       console.log(JSON.stringify(response));
+       //console.log(JSON.stringify(response));
   })
   .error(
     function(response)
@@ -37,17 +37,20 @@ module.controller('eventlist',function($scope, $http,$rootScope)
       console.log("error:"+ response.error_message);
     });
 
-  $scope.next=function()
+  $scope.next=function(id,name,imgid)
   {
-    window.location.assign('./events.html');
-  }
+    $rootScope.curreventid = id;
+    $rootScope.currname = name;
+    $rootScope.currimgid = imgid;
+    $scope.menu.setMainPage('eventdesc.html', {closeMenu: true});
+  };
 });
 
 module.controller('events',function($scope, $http,$rootScope)
 {
     $http.get('http://shaastra.org:8001/api/eventLists').success(function(response) 
     {
-        console.log(response);
+        //console.log(response);
         $scope.eventcats = response;
     })
     .error(
@@ -62,7 +65,21 @@ module.controller('events',function($scope, $http,$rootScope)
       $rootScope.currevent = s;
       $scope.menu.setMainPage('event_page.html', {closeMenu: true});
       //window.location.assign('./event_page.html');
-    }
+    };
+});
+module.controller('eventdesc',function($scope,$http,$rootScope)
+{
+  var eventid = $rootScope.curreventid;
+  console.log(eventid);
+  $http.get('http://shaastra.org:8001/api/events/showWeb/'+eventid).success(function(response)
+  {
+    $scope.tabs = response.eventTabs;
+    $scope.eve = response;
+  }).error(
+  function(response)
+  {
+   console.log("error:"+ response.error_message); 
+  });
 });
           //Map controller
 module.controller('MapController', function($scope, $timeout){
@@ -93,7 +110,7 @@ module.controller('MapController', function($scope, $timeout){
           };
           function error(err) {
               console.warn('ERROR(' + err.code + '): ' + err.message);
-          };
+          }
           if(navigator.geolocation)
             {navigator.geolocation.getCurrentPosition(
                 function(position) {
