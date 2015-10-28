@@ -3,22 +3,37 @@
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.11/angular.min.js"></script>
     <script type="text/javascript" src="controller.js"></script>
+     <link rel="stylesheet" href="css/eventcat.css">
   </head>
 
   <body ng-app="app">
 
     <div ng-controller="events">
-        
-    <div class="center" id="title">
-      EVENTS    
-    </div>
+        <ons-toolbar> 
+        <ons-row align="center">
+        <div class="left">
+          <ons-toolbar-button ng-click="menu.toggle()">
+            <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <ons-col width="50%"><div class="center">Events</div></ons-col>    
+    <div class="right"></div>
+      </ons-row>       
+  </ons-toolbar>
+         
+      <ons-list>
 
-    <br>
-
-    <div>
-      <button class="button button--large--cta" ng-repeat="x in eventcats" ng-click="info(x._id)">{{x.title}}</button>
-    </div>
-    
+        <ons-list-item modifier="chevron" ng-repeat="x in eventcats" ng-click="info(x._id)" class="list-item-container">
+          <ons-row>
+            <ons-col width="100%">
+              <img src="http://shaastra.org:8001/api/uploads/{{x.imageid}}/{{x.imagename}}" class="thumbnail">
+            </ons-col>
+              <div class="name centre">
+                {{x.title}}
+              </div>
+          </ons-row>
+        </ons-list-item>
+      </ons-list>
   </body>
 
 </ons-page>   

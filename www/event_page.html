@@ -7,6 +7,17 @@
 
 <body ng-app="app" >
   <div ng-controller="eventlist">
+      <ons-toolbar>        
+      <div class="left">
+          <ons-toolbar-button ng-click="menu.toggle()">
+            <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+    <div class="center" >
+      <center>{{currname}}</center>
+    </div>
+    <div class="right"></div>
+  </ons-toolbar>
     <div class="profile-card">
         <img ng-src="{{currimage}}" class="event-image">
       </div>

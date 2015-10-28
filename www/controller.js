@@ -24,6 +24,7 @@ module.controller('eventlist',function($scope, $http,$rootScope)
   {
 
        $scope.currinfo=response.info;
+       $scope.currname=response.title;
        //console.log($scope.currinfo);
        var imgid=response.imageid;
        var imgname=response.imagename;

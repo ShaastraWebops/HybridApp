@@ -65,7 +65,10 @@
   line-height: 37px;
   padding-top: 0;
   padding-bottom: 0;
-  transition: 0.07s all linear;
+  transition: all 0.07s linear;
+  -webkit-transition: all 0.07s linear;
+  -o-transition: all 0.07s linear;
+  -moz-transition: all 0.07s linear;
 }
 
 .item-accordion.ng-hide {
@@ -83,4 +86,23 @@
 
 .active {
   background: #EFEFEF;
+}
+.info-col {
+  height: 60px;
+  line-height: 1;
+  padding: 12px 10px 12px 10px;
+}
+
+.info-num {
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.8;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.info-unit {
+  margin-top: 6px;
+  font-size: 14px;
+  opacity: 0.4;
 }

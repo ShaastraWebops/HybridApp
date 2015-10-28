@@ -17,14 +17,19 @@
   <body ng-app="app">
     <div ng-controller="eventdesc">
           <ons-page>
-      <ons-toolbar>
-        <div class="left"><ons-back-button>Back</ons-back-button></div>
-        <div class="center">Profile</div>
-        <div class="right">
+                <ons-toolbar>        
+      <div class="left">
+          <ons-toolbar-button ng-click="menu.toggle()">
+            <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+    <div class="center" >
+      <center>{{eve.name}}</center>
+    </div>      
+    <div class="right">
           <ons-toolbar-button><ons-icon icon="ion-gear-a" style="vertical-align: -4px; font-size: 28px;"></ons-icon></ons-toolbar-button>
         </div>
-      </ons-toolbar>
-
+  </ons-toolbar>
       <div class="profile-card">
 
         <img src="http://shaastra.org:8001/api/uploads/{{eve.imageid}}/{{eve.imagename}}" class="profile-image">
@@ -39,6 +44,30 @@
         </ons-list-item>
     </ons-list>
       <br> -->
+            <ons-list style="padding-left:15%;">
+        <ons-list-item>
+          <ons-row>
+            <ons-col class="info-col">
+              <div class="info-num">
+                <ons-icon icon="fa-pencil"></ons-icon>
+              </div>
+              <div class="info-unit">Register</div>
+            </ons-col>
+            <ons-col class="info-col">
+              <div class="info-num">
+                <ons-icon icon="fa-mobile-phone"></ons-icon>
+              </div>
+              <div class="info-unit">Contact Us</div>
+            </ons-col>
+            <ons-col class="info-col">
+              <div class="info-num">
+                <ons-icon icon="fa-home"></ons-icon>
+              </div>
+              <div class="info-unit">Website</div>
+            </ons-col>
+          </ons-row>
+        </ons-list-item>
+      </ons-list>
       <ons-list modifier="inset" style="margin-top: 10px">
       <div ng-repeat="tab in tabs">
         <ons-list-item ng-click="toggleGroup(tab)" class="title list__item--tappable list__item__line-height" ng-class="{active:isGroupShown(tab)}">
