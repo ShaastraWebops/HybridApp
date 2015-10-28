@@ -57,3 +57,30 @@
   font-size: 14px;
   opacity: 0.4;
 }
+.list__item {
+  min-height: 0px;
+}
+
+.item-accordion {
+  line-height: 37px;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.07s all linear;
+}
+
+.item-accordion.ng-hide {
+  line-height: 0px;
+}
+
+.item-accordion.ng-hide-add,
+.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+
+.title {
+  background: #F5F5F5;
+}
+
+.active {
+  background: #EFEFEF;
+}

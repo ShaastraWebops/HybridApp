@@ -1,5 +1,5 @@
 // This is a JavaScript file
-var module = angular.module('app', ['onsen']);
+var module = angular.module('app', ['onsen','ngAnimate']);
 
 module.controller('signupcontroller',function($scope, $http){
     $scope.close = function(){
@@ -67,19 +67,35 @@ module.controller('events',function($scope, $http,$rootScope)
       //window.location.assign('./event_page.html');
     };
 });
-module.controller('eventdesc',function($scope,$http,$rootScope)
+module.controller('eventdesc',function($scope,$http,$rootScope,$sce)
 {
+  converter = new showdown.Converter();
+  $scope.toggleGroup = function(group) {
+    if ($scope.isGroupShown(group)) {
+      $scope.shownGroup = null;
+    } else {
+      $scope.shownGroup = group;
+    }
+  };
+  $scope.isGroupShown = function(group) {
+    return $scope.shownGroup === group;
+  };
   var eventid = $rootScope.curreventid;
   console.log(eventid);
   $http.get('http://shaastra.org:8001/api/events/showWeb/'+eventid).success(function(response)
   {
     $scope.tabs = response.eventTabs;
+    for(var i=0;i<$scope.tabs.length;i++){
+      $scope.tabs[i].info = $sce.trustAsHtml(converter.makeHtml($scope.tabs[i].info));
+      console.log($scope.tabs[i].info);
+    }
     $scope.eve = response;
   }).error(
   function(response)
   {
    console.log("error:"+ response.error_message); 
   });
+
 });
           //Map controller
 module.controller('MapController', function($scope, $timeout){

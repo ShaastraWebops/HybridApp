@@ -33,13 +33,22 @@
         <div class="profile-desc">{{eve.info}}</div>
 
       </div>
-      <ons-list modifier="inset" style="margin-top: 10px">
+<!--       <ons-list modifier="inset" style="margin-top: 10px">
       <ons-list-item class="list__item--tappable list__item__line-height" ng-repeat="tab in tabs">
           {{tab.name}}
         </ons-list-item>
     </ons-list>
-      <br>
-
+      <br> -->
+      <ons-list modifier="inset" style="margin-top: 10px">
+      <div ng-repeat="tab in tabs">
+        <ons-list-item ng-click="toggleGroup(tab)" class="title list__item--tappable list__item__line-height" ng-class="{active:isGroupShown(tab)}">
+          {{tab.name}}
+        </ons-list-item>
+        <ons-list-item class="item-accordion" style="font-size:15px;line-height:18px;"ng-show="isGroupShown(tab)">
+          <div ng-bind-html="tab.info"></div>
+        </ons-list-item>
+      </div>
+    </ons-list>            
 
     </ons-page>
         </div>
