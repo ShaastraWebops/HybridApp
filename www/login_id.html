@@ -11,11 +11,17 @@
         <img src="images/shaastra_main_log.png" class="main_logo">
     </div>
     <div class="login-form">
-        <input type="email" class="text-input" placeholder="User name, Email or Shaastra Id" value="">
+        <input type="email" class="text-input" placeholder="Shaastra ID" value="">
         <input type="password" class="text-input" placeholder="Password" value="">
-        <br><br>
+        <br>
         <button class="button--large--cta" >Log In</button>
-        <br><br>
-        <ons-button modifier="quiet" class="forgot-password">Forgot password?</ons-button>
+        <!-- <ons-button modifier="quiet" class="forgot-password">Forgot password?</ons-button> -->
+        <span style="font-size:0.9em;text-align:center;"><b>Don't have a Shaastra ID yet?</b></span>
+        <li class="list__item list__item--tappable login_buttons_list_signup" style="text-align:center;margin-top:10px;">
+          <ons-icon icon="ion-thumbsup" style="padding-right:10px;padding-top:5px;"></ons-icon>
+                  Register with Shaastra
+        </li>
+        
     </div>
+    
 </ons-page>

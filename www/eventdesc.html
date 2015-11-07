@@ -12,7 +12,7 @@
     <script>
       ons.bootstrap();
     </script>
-
+   
   </head>
   <body ng-app="app">
     <div ng-controller="eventdesc">
@@ -24,10 +24,10 @@
           </ons-toolbar-button>
         </div>
     <div class="center" >
-      <center>{{eve.name}}</center>
+      <!-- <center>{{eve.name}}</center> -->
     </div>      
     <div class="right">
-          <ons-toolbar-button><ons-icon icon="ion-gear-a" style="vertical-align: -4px; font-size: 28px;"></ons-icon></ons-toolbar-button>
+          <!-- <ons-toolbar-button><ons-icon icon="ion-gear-a" style="vertical-align: -4px; font-size: 28px;"></ons-icon></ons-toolbar-button> -->
         </div>
   </ons-toolbar>
       <div class="profile-card">
@@ -44,37 +44,41 @@
         </ons-list-item>
     </ons-list>
       <br> -->
-            <ons-list style="padding-left:15%;">
-        <ons-list-item>
+      <br>
+        <ons-list style="padding-left:12%;">
+        <ons-list-item style="height:90px;">
           <ons-row>
             <ons-col class="info-col">
-              <div class="info-num">
+              <div class="info-num"  style="text-align:center;">
                 <ons-icon icon="fa-pencil"></ons-icon>
               </div>
-              <div class="info-unit">Register</div>
+              <div class="info-unit"  style="text-align:center;">Register</div>
             </ons-col>
-            <ons-col class="info-col">
-              <div class="info-num">
+            <ons-col class="info-col" style="text-align:center;">
+              <div class="info-num"  style="text-align:center;">
                 <ons-icon icon="fa-mobile-phone"></ons-icon>
               </div>
-              <div class="info-unit">Contact Us</div>
+              <div class="info-unit" style="text-align:center;">Contact Us</div>
             </ons-col>
-            <ons-col class="info-col">
+            <ons-col class="info-col" style="text-align:center;">
               <div class="info-num">
-                <ons-icon icon="fa-home"></ons-icon>
+                <ons-icon icon="fa-home"  style="text-align:center;"></ons-icon>
               </div>
-              <div class="info-unit">Website</div>
+              <div class="info-unit" >Website</div>
             </ons-col>
           </ons-row>
         </ons-list-item>
       </ons-list>
+      <br>
       <ons-list modifier="inset" style="margin-top: 10px">
       <div ng-repeat="tab in tabs">
-        <ons-list-item ng-click="toggleGroup(tab)" class="title list__item--tappable list__item__line-height" ng-class="{active:isGroupShown(tab)}">
+        <ons-list-item ng-click="toggleGroup(tab)" class="list__item list__item--chevron list__item__line-height" ng-class="{active:isGroupShown(tab)}">
           {{tab.name}}
         </ons-list-item>
         <ons-list-item class="item-accordion" style="font-size:15px;line-height:18px;"ng-show="isGroupShown(tab)">
+        <br>
           <div ng-bind-html="tab.info"></div>
+        <br>
         </ons-list-item>
       </div>
     </ons-list>            

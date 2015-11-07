@@ -1,8 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
 
-<ons-modal var="modal">
-<img src="images/tick.png" alt="" ng-click="modal.hide()" style="max-width:100%;
-max-height:100%;" class="modal_image"/>
-</ons-modal>
+    <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+    <link rel="stylesheet" href="css/eventdesc.css">
+
+    <script src="lib/onsen/js/angular/angular.js"></script>
+    <script src="lib/onsen/js/onsenui.js"></script>
+    <script type="text/javascript" src="controller.js"></script>
+    <script>
+      ons.bootstrap();
+    </script>
+
+  </head>
 
 <ons-toolbar>
         <div class="left">
@@ -12,35 +23,108 @@ max-height:100%;" class="modal_image"/>
         <div class="center"></div>
 </ons-toolbar>
 
-<ons-navigator>
-
-<ons-page ng-controller="signupcontroller">
-   {{ names }}
+<ons-page>
     <div style="text-align: center">
 
         <img src="images/shaastra_main_log.png" class="main_logo_signup">
     </div>
 
     <div class="formarea">
-    
-        <div class="first" >
-          <input type="text" class="text-input--underbar width-full" placeholder="First Name" value="">
-          <input type="text" class="text-input--underbar width-full" placeholder="Last Name" value="" style="border-width-left: 1px">
-        </div>
 
-        <div class="form-row">
-          <input type="text" class="text-input second" placeholder="Email Address" value="">
-        </div>
+           <div class="input-group"> 
+           <span class="input-group-addon" > 
+           <span class="glyphicon glyphicon-user" height="20px" width="20px" alt="user_image"></span> 
+           </span>
+           <input type="text" style="margin-top:0px;"name="fname" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="First Name" aria-describedby="sizing-addon2" required="">
+           </div>
+           
+           <br>
+           <div class="input-group"> 
+           <span class="input-group-addon" > 
+           <span class="glyphicon glyphicon-user" height="20px" width="20px" alt="user_image"></span> 
+           </span>
+           <input type="text" style="margin-top:0px;"name="lname" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Last Name" aria-describedby="sizing-addon2" required="">
+           </div>
+           <br>
+           <div class="input-group"> 
+           <span class="input-group-addon" > 
+           <span class="glyphicon glyphicon-lock" height="20px" width="20px" alt="pass"></span> 
+           </span>
+           <input type="password" style="margin-top:0px;"name="pass" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Password" aria-describedby="sizing-addon2" required="">
+           </div>
+           <br>
+           <div class="input-group"> 
+           <span class="input-group-addon" > 
+           <span class="glyphicon glyphicon-envelope" height="20px" width="20px" alt="email"></span> 
+           </span>
+           <input type="text" style="margin-top:0px;"name="email" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Email ID" aria-describedby="sizing-addon2" required="">
+           </div>
+           <br>
+           <div class="input-group"> 
+           <span class="input-group-addon" > 
+           <span class="glyphicon glyphicon-phone" height="20px" width="20px" alt="mobile"></span> 
+           </span>
+           <input type="text" style="margin-top:0px;"name="mobile" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Mobile Number" aria-describedby="sizing-addon2" required="">
+           </div>
+           <br>
+           <div class="input-group"> 
+           <span class="input-group-addon" > 
+           <span class="glyphicon glyphicon-home" height="20px" width="20px" alt="city"></span> 
+           </span>
+           <input type="text" style="margin-top:0px;"name="city" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="City" aria-describedby="sizing-addon2" required="">
+           </div>
+           <br>
+           <div class="input-group"> 
+           <span class="input-group-addon" > 
+           <span class="glyphicon glyphicon-tasks" height="20px" width="20px" alt="age"></span> 
+           </span>
+           <input type="number" min="9" style="margin-top:0px;"name="age" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Age" aria-describedby="sizing-addon2" required="">
+           </div>
+            <br>
+           <div id="selectGender" style="text-align: center;"> 
+           <ul class="list" style="font-variant: small-caps;">
+            <li class="list__header">Gender</li>
+            <li class="list__item list__item--tappable" >
+              <label class="radio-button radio-button--list-item">
+                <input type="radio" name="browser-choice" checked="checked">
+                <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+                Male
+              </label>
+            </li>
+            
+            <li class="list__item list__item--tappable">
+              <label class="radio-button radio-button--list-item">
+                <input type="radio" name="browser-choice">
+                <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+                Female
+              </label>
+             </li>
+             </ul>
+            </div>
+            <br>
+            <div class="input-group"> 
+           <span class="input-group-addon" > 
+           <span class="glyphicon glyphicon-tasks" height="20px" width="20px" alt="college"></span> 
+           </span>
+           <input type="text" style="margin-top:0px;"name="college" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="College/School" aria-describedby="sizing-addon2" required="">
+           </div>
+            <br>
+            
+            <label class="checkbox">
+              <input type="checkbox" checked="checked">
+              <div class="checkbox__checkmark"></div>
+              Want accomodation?
+            </label><br>
+            <label class="checkbox">
+              <input type="checkbox">
+              <div class="checkbox__checkmark"></div>
+              School student?
+            </label><br>
+            <div class="form-group">
+                <button type="submit" class="button--large--cta" >Register</button>
+            </div>
 
-        <div class="form-row">
-          <input type="password" class="text-input" placeholder="Password (atleast six characters)" value="">
-        </div>
-
-        <div class="vspc form-row">
-          <ons-button modifier="large--cta" ng-click="modal.show()">Register</ons-button>
-        </div>
-        
      </div>
      
 </ons-page>
-</ons-navigator>
+</html>
