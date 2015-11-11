@@ -16,7 +16,10 @@
             <ons-toolbar-button ng-click="menu.toggleMenu()"><ons-icon id="bars" icon="bars"></ons-icon></ons-toolbar-button>
         </div>
         
-        <div class="center"></div>
+        <div class="center" >
+      <div ng-hide="online"><h3 style="color:red">You're offline</h3></div>
+
+    </div>
     </ons-toolbar>
     <ons-tabbar>
       <ons-tab page="main_events_page_disp.html">
