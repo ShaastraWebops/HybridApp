@@ -22,8 +22,10 @@
     <div class="profile-card">
         <img ng-src="{{currimage}}" class="event-image">
       </div>
-    
-        <ons-list>
+      <div ng-if="!tabs.length">
+        <h2>Loading....</h2>
+      </div>
+
         <div ng-repeat="event in events">
         <ons-list-item modifier="chevron" class="list-item-container" ng-click="next(event._id,event.imagename,event.imageid)">
           <div class="list-item-left">

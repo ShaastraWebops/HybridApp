@@ -67,6 +67,7 @@ module.controller('events',function($scope, $http,$rootScope)
     {
         //console.log(response);
         $scope.eventcats = response;
+        console.log($scope.eventcats);
     })
     .error(
     function(response)
@@ -75,7 +76,7 @@ module.controller('events',function($scope, $http,$rootScope)
     });
 
     $scope.message = 'Loading...';
-    console.log($scope.eventcats);
+
 
     $scope.info=function(s)
     {

@@ -22,7 +22,10 @@
   </ons-toolbar>
          
       <ons-list>
-
+        <ons-list>
+         <div ng-if="!eventcats.length">
+        <h2>{{ message }}</h2>
+      </div>
         <ons-list-item modifier="chevron" ng-repeat="x in eventcats" ng-click="info(x._id)" class="list-item-container">
           <ons-row>
             <ons-col width="100%">
