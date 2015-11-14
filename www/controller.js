@@ -74,6 +74,9 @@ module.controller('events',function($scope, $http,$rootScope)
       console.log("error:"+ response.error_message);
     });
 
+    $scope.message = 'Loading...';
+    console.log($scope.eventcats);
+
     $scope.info=function(s)
     {
       //console.log(s);
@@ -82,6 +85,7 @@ module.controller('events',function($scope, $http,$rootScope)
       //window.location.assign('./event_page.html');
     };
 });
+
 module.controller('eventdesc',function($scope,$http,$rootScope,$sce)
 {
   converter = new showdown.Converter();
@@ -92,6 +96,10 @@ module.controller('eventdesc',function($scope,$http,$rootScope,$sce)
       $scope.shownGroup = group;
     }
   };
+
+  $scope.message = 'Loading...';
+
+
   $scope.isGroupShown = function(group) {
     return $scope.shownGroup === group;
   };
@@ -100,6 +108,7 @@ module.controller('eventdesc',function($scope,$http,$rootScope,$sce)
   $http.get('http://shaastra.org:8001/api/events/showWeb/'+eventid).success(function(response)
   {
     $scope.tabs = response.eventTabs;
+    console.log($scope.tabs);
     for(var i=0;i<$scope.tabs.length;i++){
       $scope.tabs[i].info = $sce.trustAsHtml(converter.makeHtml($scope.tabs[i].info));
       console.log($scope.tabs[i].info);

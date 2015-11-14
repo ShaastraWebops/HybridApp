@@ -71,8 +71,14 @@
         </ons-list-item>
       </ons-list>
       <br>
+     
+
       <ons-list modifier="inset" style="margin-top: 10px">
+      <div ng-if="!tabs.length" class="makeCenter">
+        <h1>{{ message }}</h1>
+      </div>
       <div ng-repeat="tab in tabs">
+
         <ons-list-item ng-click="toggleGroup(tab)" class="list__item list__item--chevron list__item__line-height" ng-class="{active:isGroupShown(tab)}">
           {{tab.name}}
         </ons-list-item>
