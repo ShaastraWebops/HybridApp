@@ -22,8 +22,8 @@
     <div class="profile-card">
         <img ng-src="{{currimage}}" class="event-image">
       </div>
-      <div ng-if="!tabs.length">
-        <h2>Loading....</h2>
+          <div ng-if="!events.length">
+        <h2>{{ message }}</h2>
       </div>
 
         <div ng-repeat="event in events">

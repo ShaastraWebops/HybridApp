@@ -44,6 +44,10 @@ module.controller('eventlist',function($scope, $http,$rootScope)
        var imgname=response.imagename;
        $scope.currimage= "http://shaastra.org:8001/api/uploads/"+imgid+"/"+imgname;
        $scope.events=response.events;
+       console.log($scope.events);
+       $scope.message = 'Loading...';
+
+
        //console.log(JSON.stringify(response));
   })
   .error(
