@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+    <link rel="stylesheet" href="../onsen-css-components-blue-basic-theme.css">
+    <link rel="stylesheet" href="details.css">
+
+    <script src="lib/onsen/js/angular/angular.js"></script>
+    <script src="lib/onsen/js/onsenui.js"></script>
+    <script>
+      ons.bootstrap();
+    </script>
+
+  </head>
+  <body>
+      <ons-page modifier="shop-details">
+         <ons-toolbar>        
+      <div class="left">
+          <ons-toolbar-button ng-click="menu.toggle()">
+            <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+     <div class="center" >
+      Envisage
+      <div ng-hide="online"><h3 style="color:red">You're offline</h3></div>
+      <!-- <center>{{currname}}</center> -->
+    </div>   
+    <div class="right">
+          <!-- <ons-toolbar-button><ons-icon icon="ion-gear-a" style="vertical-align: -4px; font-size: 28px;"></ons-icon></ons-toolbar-button> -->
+        </div>
+  </ons-toolbar>
+
+        <div class="card">
+
+          <div class="card-name">Envisage</div>
+          <div class="card-desc">A novel techno cultural show specializing in designing your dreams in the field of science and technology.</div>
+
+        </div>
+
+             <ons-list style="margin-top: 12px;">
+          <ons-list-item >
+            <div class="prop-desc">
+         
+           It is a marvel of awesomeness as the transcendental fusion of art and technology pleasures your visual senses and stupefies you with audio effects. Being the only student organized event of its kind in the whole country, it gives a new meaning to your idea of entertainment and turning projects into a memory you will long cherish!
+The work of science can be enigmatic. Have your sight deceived by animations shown using just a strip of LEDs. It was a new groundbreaking performance.
+This year it is going be even BIGGER & BETTER! Join us at Shaastra 2016 and get ready to share the awe!
+            </div>
+          </ons-list-item>
+
+          
+
+
+        
+
+        
+     
+      </ons-page>
+ 
+  </body>
+</html>

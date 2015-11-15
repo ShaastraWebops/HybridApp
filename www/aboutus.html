@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+    <link rel="stylesheet" href="../onsen-css-components-blue-basic-theme.css">
+    <link rel="stylesheet" href="profile.css">
+
+    <script src="lib/onsen/js/angular/angular.js"></script>
+    <script src="lib/onsen/js/onsenui.js"></script>
+    <script>
+      ons.bootstrap();
+    </script>
+
+  </head>
+  <body>
+    <style>
+
+.profile-card {
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding: 30px 0;
+  line-height: 1.4;
+  background-color: #33393c;
+  text-shadow: rgba(0, 0, 0, 0.4) 0px 1px 0px;
+}
+
+.profile-image {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background-color: black;
+  border 1px solid white;
+  box-shadow:rgba(0, 0, 0, 0.2) 0px 2px 0px 0px;
+  -webkit-box-shadow:rgba(0, 0, 0, 0.2) 0px 2px 0px 0px;
+}
+
+.profile-name {
+  margin: 20px 0 0 0;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.profile-id {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.profile-desc {
+  font-size: 15px;
+  opacity: 0.6;
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.info-col {
+  height: 60px;
+  line-height: 1;
+  padding: 12px 0 12px 4px;
+}
+
+.info-num {
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.info-unit {
+  margin-top: 6px;
+  font-size: 14px;
+  opacity: 0.4;
+}
+
+    </style>
+
+    <ons-page>
+       <ons-toolbar>        
+      <div class="left">
+          <ons-toolbar-button ng-click="menu.toggle()">
+            <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+     <div class="center" >
+      ABOUT US
+      <div ng-hide="online"><h3 style="color:red">You're offline</h3></div>
+      <!-- <center>{{currname}}</center> -->
+    </div>   
+    <div class="right">
+          <!-- <ons-toolbar-button><ons-icon icon="ion-gear-a" style="vertical-align: -4px; font-size: 28px;"></ons-icon></ons-toolbar-button> -->
+        </div>
+  </ons-toolbar>
+
+
+      <div class="profile-card">
+
+        <img src="images/shaastra_dices.png" class="profile-image">
+        <div class="profile-name">Shaastra</div>
+        <div class="profile-id">IIT Madras</div>
+        <div class="profile-desc">Shaastra is the annual technical festival of Indian Institute of Technology Madras, Chennai, India and the first ISO certified festival of its kind.
+
+          <br>
+        
+Shaastra returns in its 18th edition, bringing with it an experience of innovation, competition and learning that has become its hallmark over the years.
+Mark the four days from January 2nd to January 5th, 2016 on your calendars, as Shaastra will keep you engrossed in a plethora of professional shows, competitions and lectures that have something for everybody. With some of the sharpest minds of the nation converging under one banner, one can expect to go back inspired.
+The classic events of Shaastra shall return bigger and better and be joined by an injection of new exciting competitions. Envisage ​4​.0 will showcase several new acts crafted completely by students.​ Hand in hand, a group of international techno-artists will perform acts that are seldom seen in India and will surely leave you in awe.​ ​Robowars, Hackathon, Aeromodelling and several such competitions will both entertain and challenge the participants. One can also head back indoors to hear some of the pioneers of technology across the globe share their views on the latest happenings of the world. We shall also celebrate the ​Makers Movement and its powerful message of creating at an individual level through the Makers Summit, giving students a stage to ​network, learn and work with the most creative and inspired minds from across the country over a period of 4 days​.</div>
+
+      </div>
+
+
+      <br>
+
+
+
+
+    </ons-page>
+
+  </body>
+</html>

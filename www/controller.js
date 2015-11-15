@@ -15,6 +15,50 @@ module.run(function($window, $rootScope) {
       }, false);
 });
 
+
+module.controller('MyCtrl', function($scope) {
+  $scope.groups = [];
+
+    $scope.groups[0] = {
+      name: 'About',
+      items: []
+    };
+   
+      $scope.groups[0].items.push('Welcome to to the IIT Madras Maker Summit 2016! The 4 day extravaganza from 2nd to 5th of Jan set to change your perceptions and broaden your horizons.We, at the Summit, believe that Anyone can be maker. A computer hacker, origami artist, a storyteller, a designer, an arduino enthusiast, whoever you may be - You. Are. A. Maker.Witness a potpourri of events including Lectures, a Panel Discussion, unique Workshops and a Product Design Challenge. Be a part of mentoring sessions with the experienced in the field, debate, discuss and innovate on any of the verticals – Transmedia Storytelling, Life Hacks and Social Technology.Network with like minded enthusiasts from different streams of education. Hear it from the experienced, learn it from the best. We promise to offer you a great experience.Mark your calendars and join us this January to be part of our Maker Summit!');
+  
+  console.log($scope.groups);
+
+  $scope.groups[1] = {
+      name: 'Event',
+      items: []
+    };
+   
+      $scope.groups[1].items.push("Panel Discussion:From Backyards to Makerspaces: The rise of the Maker CultureLo behold the world where ideas find fruition within hours. What made this possible? Listen to our diverse panel of speakers talk about the hot and trending in the Maker movement. The participants will have an exclusive opportunity to witness the confluence of some of the most experienced makers around the globe. Just be there!Make-a-thon:The most exciting part of Maker Summit 2016! Get ready to join hands with like-minded makers with different skill-sets.Participants will have 4 days to work in teams, to come up with something inspiring and creative. Basic workshop/ makerspace facilities and necessary resources shall be provided. The teams will also have access to mentoring sessions with experts in the field to guide them through the journey of ideating, designing and creating. Exciting prizes to be awarded to the winners. Stay tuned to our FB page to see the prizes that await you.Hands-on Workshops:Maker summit 2016 provides you an opportunity to get your hands dirty and acquire a unique set of skills, through our workshop sessions.· 3D printing - Have you ever wished your designs on a software came to life? Ever wanted to be a part of the Next Big Thing in the Maker movement? Here’s the chance to learn this simple, exciting skill.· Laser Cutting - How cool would it be to make your own Batrang or Minion from a steel plate! Learn to laser cut and engrave your designs on beautiful flat sheet materials.· Mozilla Maker Party - Maker parties help you explore the web and make your own space on it. It's a celebration of making and learning on the web. As a part of this workshop, we will have associated hands-on activities like making models, brainstorming around it. Get ready to use tools like the Thimble and Webmaker!");
+    $scope.groups[2] = {
+      name: 'Tracks',
+      items: []
+    };
+   
+      $scope.groups[2].items.push("Transmedia storytelling:Get a chance to create immersive story worlds with multiple media platforms! This vertical would involve defining the story's purpose (could range from hygiene education for kids to creating a virtual pet) and taking it forward through storyboards and film editing. Build a prototype that could turn out to be next exciting thing in the world.Life HacksCome up with simple yet effective solutions for day-to-day hitches. Developing a sensor based tap to save water, portable mobile phone chargers, intelligent personal assistant in cell phones that prevent accidents and what not. Look around. Is there something you can fix? Come over!Social Technology ProjectsYes, there is a Pandora box of social problems. What can you do to help? Find inspiring uses to technology and sciences. Primary focus of this vertical will be assistive technology. Create something that benefits people around you, be it in terms of education, health, culture or quality of life.");
+  console.log($scope.groups);
+
+  /*
+   * if given group is the selected group, deselect it
+   * else, select the given group
+   */
+  $scope.toggleGroup = function(group) {
+    if ($scope.isGroupShown(group)) {
+      $scope.shownGroup = null;
+    } else {
+      $scope.shownGroup = group;
+    }
+  };
+  $scope.isGroupShown = function(group) {
+    return $scope.shownGroup === group;
+  };
+
+});
+
 module.controller('signupcontroller',function($scope, $http){
     $scope.close = function(){
         modal.close();
@@ -89,6 +133,26 @@ module.controller('events',function($scope, $http,$rootScope)
       $scope.menu.setMainPage('event_page.html', {closeMenu: true});
       //window.location.assign('./event_page.html');
     };
+});
+
+
+
+module.controller('AccordionDemoCtrl',function($scope)
+{
+  $scope.oneAtATime = true;
+
+  $scope.groups = [
+    {
+      title: 'Dynamic Group Header - 1',
+      content: 'Dynamic Group Body - 1'
+    },
+    {
+      title: 'Dynamic Group Header - 2',
+      content: 'Dynamic Group Body - 2'
+    }
+  ];
+
+  $scope.items = ['Item 1', 'Item 2', 'Item 3'];
 });
 
 module.controller('eventdesc',function($scope,$http,$rootScope,$sce)

@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+    <link rel="stylesheet" href="../onsen-css-components-blue-basic-theme.css">
+    <link rel="stylesheet" href="list_thumbnails.css">
+
+    <script src="lib/onsen/js/angular/angular.js"></script>
+    <script src="lib/onsen/js/onsenui.js"></script>
+     <script type="text/javascript" src="controller.js"></script>
+    <script>
+      ons.bootstrap();
+    </script>
+   
+  </head>
+
+  <body ng-app="app">
+    <ons-page>
+   <div>
+          <ons-page>
+                <ons-toolbar>        
+      <div class="left">
+          <ons-toolbar-button ng-click="menu.toggle()">
+            <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+     <div class="center" >
+      Shows and Exhibition
+      <div ng-hide="online"><h3 style="color:red">You're offline</h3></div>
+      <!-- <center>{{currname}}</center> -->
+    </div>   
+    <div class="right">
+          <!-- <ons-toolbar-button><ons-icon icon="ion-gear-a" style="vertical-align: -4px; font-size: 28px;"></ons-icon></ons-toolbar-button> -->
+        </div>
+  </ons-toolbar>
+
+      <ons-list>
+
+        <ons-list-item modifier="chevron" class="list-item-container" onclick="menu.setMainPage('envisage.html', {closeMenu: true})">
+          <ons-row>
+       
+            <ons-col>
+              <div class="name">
+              Envisage
+              </div>
+              <div class="desc">
+               A novel techno cultural show specializing in designing your dreams in the field of science and technology.
+              </div>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+        </ons-list-item>
+
+        <ons-list-item modifier="chevron" class="list-item-container" onclick="menu.setMainPage('airshow.html', {closeMenu: true})">
+          <ons-row>
+            
+            <ons-col>
+              <div class="name">
+                Air show
+              </div>
+              
+              <div class="desc">
+                One of the biggest RC flying shows in the country, with planes and helicopters all twisting and twirling and fliers using the sky as the canvas for their masterpieces. 
+              </div>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+        </ons-list-item>
+
+        <ons-list-item modifier="chevron" class="list-item-container" onclick="menu.setMainPage('lasershow.html', {closeMenu: true})">
+          <ons-row>
+            
+            <ons-col>
+              <div class="name">
+                Laser show
+              </div>
+             
+              <div class="desc">
+                A technological extravaganza of sheer brilliance with dazzling lights and spectacular illusions, which drives the audience into a fun-filled experience.
+              </div>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+        </ons-list-item>
+
+        <ons-list-item modifier="chevron" class="list-item-container" onclick="menu.setMainPage('Exhibits.html', {closeMenu: true})">
+          <ons-row>
+            
+            <ons-col>
+              <div class="name">
+                Exhibits
+              </div>
+              
+              <div class="desc">
+                Breaking the boundaries and igniting innovation, Exhibitions has always provided an opportunity for the young minds to witness the achievements in technology.
+              </div>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+        </ons-list-item>
+      </ons-list>
+
+    </ons-page>
+
+
+  </body>
+</html>
+``
