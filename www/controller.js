@@ -42,6 +42,8 @@ module.controller('MyCtrl', function($scope) {
       $scope.groups[2].items.push("Transmedia storytelling:Get a chance to create immersive story worlds with multiple media platforms! This vertical would involve defining the story's purpose (could range from hygiene education for kids to creating a virtual pet) and taking it forward through storyboards and film editing. Build a prototype that could turn out to be next exciting thing in the world.Life HacksCome up with simple yet effective solutions for day-to-day hitches. Developing a sensor based tap to save water, portable mobile phone chargers, intelligent personal assistant in cell phones that prevent accidents and what not. Look around. Is there something you can fix? Come over!Social Technology ProjectsYes, there is a Pandora box of social problems. What can you do to help? Find inspiring uses to technology and sciences. Primary focus of this vertical will be assistive technology. Create something that benefits people around you, be it in terms of education, health, culture or quality of life.");
   console.log($scope.groups);
 
+
+
   /*
    * if given group is the selected group, deselect it
    * else, select the given group
@@ -137,23 +139,6 @@ module.controller('events',function($scope, $http,$rootScope)
 
 
 
-module.controller('AccordionDemoCtrl',function($scope)
-{
-  $scope.oneAtATime = true;
-
-  $scope.groups = [
-    {
-      title: 'Dynamic Group Header - 1',
-      content: 'Dynamic Group Body - 1'
-    },
-    {
-      title: 'Dynamic Group Header - 2',
-      content: 'Dynamic Group Body - 2'
-    }
-  ];
-
-  $scope.items = ['Item 1', 'Item 2', 'Item 3'];
-});
 
 module.controller('eventdesc',function($scope,$http,$rootScope,$sce)
 {
