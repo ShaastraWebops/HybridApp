@@ -23,9 +23,10 @@
 }
 
 .item-accordion {
-  line-height: 37px;
+  line-height: 34px;
   padding-top: 0;
   padding-bottom: 0;
+  text-align: justify;
   transition: 0.07s all linear;
 }
 
@@ -57,10 +58,7 @@
 }
 
 .profile-image {
-  height: 250px;
-  width: 250px;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
+  width: 100%;
   background-color: black;
   border 1px solid white;
   box-shadow:rgba(0, 0, 0, 0.2) 0px 2px 0px 0px;
@@ -118,9 +116,10 @@
       <div class="left">
           <ons-toolbar-button ng-click="menu.toggle()">
             <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
-          </ons-toolbar-button>IIT Madras Maker Summit 2016
+          </ons-toolbar-button>
         </div>
      <div class="center" > 
+     Maker Summit 2016
       <div ng-hide="online"><h3 style="color:red">You're offline</h3></div>
       <!-- <center>{{currname}}</center> -->
     </div>   
@@ -132,8 +131,7 @@
       <div class="profile-card">
 
         <img src="images/ms.jpg" class="profile-image">
-        <div class="profile-name">Maker Summit</div>
-
+        <br><br>
         <div class="profile-desc">
 Welcome to the IIT Madras Maker Summit 2016! The 4 day extravaganza from 2nd to 5th of Jan set to change your perceptions and broaden your horizons. </div>
 
@@ -151,8 +149,9 @@ Welcome to the IIT Madras Maker Summit 2016! The 4 day extravaganza from 2nd to 
           <ons-icon icon="plus-square-o" ng-if="!isGroupShown(group)"></ons-icon>
           {{group.name}}
         </ons-list-item>
+        
         <ons-list-item class="item-accordion" ng-repeat="item in group.items" ng-show="isGroupShown(group)">
-          {{item}}
+          <div ng-bind-html="renderHtml(item)" style="margin-top:10px;margin-bottom:10px;font-size: 14px;"></div>
         </ons-list-item>
       </div>
     </ons-list>
