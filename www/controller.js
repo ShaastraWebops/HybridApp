@@ -1,18 +1,6 @@
 // This is a JavaScript file
 var module = angular.module('app', ['onsen','ngAnimate','LocalStorageModule']);
 
-function getBase64Image(img) {
-    var canvas = document.createElement("canvas");
-    canvas.width = img.width;
-    canvas.height = img.height;
-
-    var ctx = canvas.getContext("2d");
-    ctx.drawImage(img, 0, 0);
-
-    var dataURL = canvas.toDataURL("image/png");
-
-    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
-}
 
 module.run(function($window, $rootScope) {
       $rootScope.online = navigator.onLine;
@@ -92,6 +80,7 @@ module.controller('eventlist',function($scope, $http,$rootScope,localStorageServ
 {
   var currid = localStorageService.get('currevent');
   var imgid,imgname,img;
+  $rootScope.lastpage = 'eventcat.html';
   console.log(currid);
   if(localStorageService.get(currid))
   {
@@ -110,6 +99,7 @@ module.controller('eventlist',function($scope, $http,$rootScope,localStorageServ
   $http.get('http://shaastra.org:8001/api/eventLists/events/'+currid).success(function(response) 
   {
 
+       $
        $scope.currinfo=response.info;
        $scope.currname=response.title;
        //console.log($scope.currinfo);
@@ -136,11 +126,16 @@ module.controller('eventlist',function($scope, $http,$rootScope,localStorageServ
     localStorageService.set('eventimg',imgid);
     $scope.menu.setMainPage('eventdesc.html', {closeMenu: true});
   };
-});
+ $scope.backbutton=function(){
+ document.addEventListener("backbutton",$scope.menu.setMainPage($rootScope.lastpage, {closeMenu: true}), false);
+    }
+    document.addEventListener("deviceready", $scope.backbutton, false);
+  });
 
 module.controller('events',function($scope, $http,$rootScope,localStorageService)
 { 
     var img;
+    $rootScope.lastpage = 'eventcat.html';
     if(localStorageService.isSupported) {
          var storageType = localStorageService.getStorageType();
      }
@@ -176,6 +171,10 @@ module.controller('events',function($scope, $http,$rootScope,localStorageService
       $scope.menu.setMainPage('event_page.html', {closeMenu: true});
       //window.location.assign('./event_page.html');
     };
+    $scope.backbutton=function(){
+ document.addEventListener("backbutton",$scope.menu.setMainPage($rootScope.lastpage, {closeMenu: true}), false);
+    }
+    document.addEventListener("deviceready", $scope.backbutton, false);
 });
 
 
@@ -184,6 +183,7 @@ module.controller('events',function($scope, $http,$rootScope,localStorageService
 module.controller('eventdesc',function($scope,$http,$rootScope,$sce,localStorageService)
 {
   converter = new showdown.Converter();
+  $rootScope.lastpage = 'event_page.html';
   $scope.toggleGroup = function(group) {
     if ($scope.isGroupShown(group)) {
       $scope.shownGroup = null;
@@ -230,13 +230,16 @@ module.controller('eventdesc',function($scope,$http,$rootScope,$sce,localStorage
    console.log("error:"+ response.error_message); 
   });
 }
-
+$scope.backbutton=function(){
+ document.addEventListener("backbutton",$scope.menu.setMainPage($rootScope.lastpage, {closeMenu: true}), false);
+    }
+    document.addEventListener("deviceready", $scope.backbutton, false);
 });
           //Map controller
 module.controller('MapController', function($scope, $timeout){
 
    
-
+       
        ons.createPopover('popover.html').then(function(popover) {
         $scope.popover = popover;
       });
