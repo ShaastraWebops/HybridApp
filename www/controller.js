@@ -1,5 +1,18 @@
 // This is a JavaScript file
-var module = angular.module('app', ['onsen','ngAnimate']);
+var module = angular.module('app', ['onsen','ngAnimate','LocalStorageModule']);
+
+function getBase64Image(img) {
+    var canvas = document.createElement("canvas");
+    canvas.width = img.width;
+    canvas.height = img.height;
+
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0);
+
+    var dataURL = canvas.toDataURL("image/png");
+
+    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+}
 
 module.run(function($window, $rootScope) {
       $rootScope.online = navigator.onLine;
@@ -61,7 +74,7 @@ module.controller('MyCtrl', function($scope) {
 
 });
 
-module.controller('signupcontroller',function($scope, $http){
+module.controller('signupcontroller',function($scope, $http,localStorageService){
     $scope.close = function(){
         modal.close();
     };
@@ -75,10 +88,24 @@ module.controller('signupcontroller',function($scope, $http){
     });
 
 
-module.controller('eventlist',function($scope, $http,$rootScope)
+module.controller('eventlist',function($scope, $http,$rootScope,localStorageService)
 {
-  var currid = $rootScope.currevent;
+  var currid = localStorageService.get('currevent');
+  var imgid,imgname,img;
   console.log(currid);
+  if(localStorageService.get(currid))
+  {
+    console.log('stored');
+    var res = localStorageService.get(currid);
+    $scope.currinfo=res.info;
+    $scope.currname=res.title;
+    imgid = res.imageid;
+    imgname = res.imgname;
+    $scope.currimage= "http://shaastra.org:8001/api/uploads/"+imgid+"/"+imgname;
+    $scope.events=res.events;
+  }
+  else
+  {
 
   $http.get('http://shaastra.org:8001/api/eventLists/events/'+currid).success(function(response) 
   {
@@ -86,14 +113,13 @@ module.controller('eventlist',function($scope, $http,$rootScope)
        $scope.currinfo=response.info;
        $scope.currname=response.title;
        //console.log($scope.currinfo);
-       var imgid=response.imageid;
-       var imgname=response.imagename;
+       imgid=response.imageid;
+       imgname=response.imagename;
        $scope.currimage= "http://shaastra.org:8001/api/uploads/"+imgid+"/"+imgname;
        $scope.events=response.events;
        console.log($scope.events);
        $scope.message = 'Loading...';
-
-
+       localStorageService.set(currid,response);
        //console.log(JSON.stringify(response));
   })
   .error(
@@ -101,37 +127,52 @@ module.controller('eventlist',function($scope, $http,$rootScope)
     {
       console.log("error:"+ response.error_message);
     });
+  }
 
   $scope.next=function(id,name,imgid)
   {
-    $rootScope.curreventid = id;
-    $rootScope.currname = name;
-    $rootScope.currimgid = imgid;
+    localStorageService.set('eventid',id);
+    localStorageService.set('eventname',name);
+    localStorageService.set('eventimg',imgid);
     $scope.menu.setMainPage('eventdesc.html', {closeMenu: true});
   };
 });
 
-module.controller('events',function($scope, $http,$rootScope)
-{
+module.controller('events',function($scope, $http,$rootScope,localStorageService)
+{ 
+    var img;
+    if(localStorageService.isSupported) {
+         var storageType = localStorageService.getStorageType();
+     }
+     //console.log(localStorageService.get('eventLists'));
+     if(localStorageService.get('eventLists'))
+      {
+        $scope.eventcats=localStorageService.get('eventLists');
+        console.log('repetition');
+      }
+    else
+    {
     $http.get('http://shaastra.org:8001/api/eventLists').success(function(response) 
     {
         //console.log(response);
+        localStorageService.set('eventLists',response);
         $scope.eventcats = response;
-        console.log($scope.eventcats);
+        console.log('first time');
+        //console.log($scope.eventcats);
     })
     .error(
     function(response)
     {
       console.log("error:"+ response.error_message);
     });
-
+    }
     $scope.message = 'Loading...';
 
 
     $scope.info=function(s)
     {
       //console.log(s);
-      $rootScope.currevent = s;
+      localStorageService.set('currevent',s);
       $scope.menu.setMainPage('event_page.html', {closeMenu: true});
       //window.location.assign('./event_page.html');
     };
@@ -140,7 +181,7 @@ module.controller('events',function($scope, $http,$rootScope)
 
 
 
-module.controller('eventdesc',function($scope,$http,$rootScope,$sce)
+module.controller('eventdesc',function($scope,$http,$rootScope,$sce,localStorageService)
 {
   converter = new showdown.Converter();
   $scope.toggleGroup = function(group) {
@@ -157,15 +198,30 @@ module.controller('eventdesc',function($scope,$http,$rootScope,$sce)
   $scope.isGroupShown = function(group) {
     return $scope.shownGroup === group;
   };
-  var eventid = $rootScope.curreventid;
+  var eventid =  localStorageService.get('eventid');
   console.log(eventid);
-  $http.get('http://shaastra.org:8001/api/events/showWeb/'+eventid).success(function(response)
+  if(localStorageService.get(eventid))
   {
-    $scope.tabs = response.eventTabs;
-    console.log($scope.tabs);
+    console.log('stored');
+    var res = localStorageService.get(eventid);
+    $scope.tabs = res.eventTabs;
     for(var i=0;i<$scope.tabs.length;i++){
       $scope.tabs[i].info = $sce.trustAsHtml(converter.makeHtml($scope.tabs[i].info));
-      console.log($scope.tabs[i].info);
+      //console.log($scope.tabs[i].info);
+    }
+    $scope.eve = res;
+  }
+  else
+  {
+
+  $http.get('http://shaastra.org:8001/api/events/showWeb/'+eventid).success(function(response)
+  {
+    localStorageService.set(eventid,response);
+    $scope.tabs = response.eventTabs;
+    //console.log($scope.tabs);
+    for(var i=0;i<$scope.tabs.length;i++){
+      $scope.tabs[i].info = $sce.trustAsHtml(converter.makeHtml($scope.tabs[i].info));
+      //console.log($scope.tabs[i].info);
     }
     $scope.eve = response;
   }).error(
@@ -173,6 +229,7 @@ module.controller('eventdesc',function($scope,$http,$rootScope,$sce)
   {
    console.log("error:"+ response.error_message); 
   });
+}
 
 });
           //Map controller

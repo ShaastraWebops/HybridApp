@@ -8,5 +8,13 @@
         "variables": {
             "URL_SCHEME": "mycoolapp"
         }
+    },
+    "cordova-plugin-file": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-file"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

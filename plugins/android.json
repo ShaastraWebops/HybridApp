@@ -31,6 +31,9 @@
         "cordova-plugin-customurlscheme": {
             "URL_SCHEME": "mycoolapp",
             "PACKAGE_NAME": "com.example.helloworld"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.example.helloworld"
         }
     },
     "dependent_plugins": {}
