@@ -153,7 +153,7 @@ module.controller('eventlist',function($scope, $http,$rootScope,localStorageServ
  $scope.backbutton=function(){
  document.addEventListener("backbutton",$scope.menu.setMainPage($rootScope.lastpage, {closeMenu: true}), false);
     }
-    document.addEventListener("deviceready", $scope.backbutton, false);
+    //document.addEventListener("deviceready", $scope.backbutton, false);
   });
 
 module.controller('events',function($scope, $http,$rootScope,localStorageService)
@@ -198,7 +198,7 @@ module.controller('events',function($scope, $http,$rootScope,localStorageService
     $scope.backbutton=function(){
  document.addEventListener("backbutton",$scope.menu.setMainPage($rootScope.lastpage, {closeMenu: true}), false);
     }
-    document.addEventListener("deviceready", $scope.backbutton, false);
+    //document.addEventListener("deviceready", $scope.backbutton, false);
 });
 
 
@@ -257,7 +257,7 @@ module.controller('eventdesc',function($scope,$http,$rootScope,$sce,localStorage
 $scope.backbutton=function(){
  document.addEventListener("backbutton",$scope.menu.setMainPage($rootScope.lastpage, {closeMenu: true}), false);
     }
-    document.addEventListener("deviceready", $scope.backbutton, false);
+    //document.addEventListener("deviceready", $scope.backbutton, false);
 });
           //Map controller
 module.controller('MapController', function($scope, $timeout){
