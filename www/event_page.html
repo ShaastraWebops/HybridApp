@@ -1,16 +1,35 @@
 <ons-page>
-
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.11/angular.min.js"></script>
     <script type="text/javascript" src="controller.js"></script>
+    <script>
+            // Wait for device API libraries to load
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        // Register the event listener
+        document.addEventListener("backbutton", onBackKeyDown, false);
+    }
+
+    // Handle the back button
+    //
+    function onBackKeyDown() {
+        document.addEventListener("backbutton",$scope.menu.setMainPage($rootScope.lastpage, {closeMenu: true}), false);
+    }
+    </script>
 </head>
 
 <body ng-app="app" >
   <div ng-controller="eventlist">
       <ons-toolbar>        
       <div class="left">
-          <ons-toolbar-button ng-click="menu.toggle()">
-            <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+          <ons-toolbar-button ng-click="menu.setMainPage(lastpage, {closeMenu: true})">
+            <ons-icon icon="ion-arrow-left-c" size="28px" fixed-width="false"></ons-icon>
           </ons-toolbar-button>
         </div>
     <div class="center" >
@@ -29,7 +48,7 @@
         <div ng-repeat="event in events">
         <ons-list-item modifier="chevron" class="list-item-container" ng-click="next(event._id,event.imagename,event.imageid)">
           <div class="list-item-left">
-            <img ng-src="http://shaastra.org:8001/api/uploads/{{event.imageid}}/{{event.imagename}}" class="avator" style="width:50px;height:50px;">
+            <img ng-cache ng-src="http://shaastra.org:8001/api/uploads/{{event.imageid}}/{{event.imagename}}" class="avator" style="width:50px;height:50px;">
           </div>
           <div class="list-item-right">
             <div class="list-item-content" style="margin-left:60px;">

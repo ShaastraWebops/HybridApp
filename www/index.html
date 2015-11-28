@@ -20,6 +20,9 @@
   <script src="components/angular-animate/angular-animate.js"></script>
   <script type="text/javascript" src="http://www.google.com/jsapi"></script>
   <script src="lib/onsen/js/onsenui.js"></script>    
+  <script type="text/javascript" src="components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+  <script type="text/javascript" src="components/imgcache.js/js/imgcache.js"></script>
+  <script type="text/javascript" src="ngImgCache.js"></script>
 
   <script src="loader.js"></script>
   
@@ -32,13 +35,14 @@
 ons.ready(function() {
 
     console.log("Menu page is going to open");
-    
   });
 
 </script>
-<body>        
+<body> 
         <div class="center"> 
- <div ng-hide="online"><h3 style="color:red">You're offline</h3></div>
+ <div ng-hide="online">
+  <h3 style="color:red">You're offline</h3>
+</div>
     </ons-toolbar>
     <ons-sliding-menu var="menu" menu-page="menu.html" main-page="eventcat.html" side="left" type="overlay" max-slide-distance="200px">
     </ons-sliding-menu>
