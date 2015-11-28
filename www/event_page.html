@@ -2,7 +2,26 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.11/angular.min.js"></script>
     <script type="text/javascript" src="controller.js"></script>
+    <script>
+            // Wait for device API libraries to load
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
 
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        // Register the event listener
+        document.addEventListener("backbutton", onBackKeyDown, false);
+    }
+
+    // Handle the back button
+    //
+    function onBackKeyDown() {
+        document.addEventListener("backbutton",$scope.menu.setMainPage($rootScope.lastpage, {closeMenu: true}), false);
+    }
+    </script>
 </head>
 
 <body ng-app="app" >

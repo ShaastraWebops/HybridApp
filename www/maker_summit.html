@@ -11,7 +11,25 @@
     <script src="lib/onsen/js/onsenui.js"></script>
     <script>
       ons.bootstrap();
-      modal.open();
+      //modal.open();
+                  // Wait for device API libraries to load
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        // Register the event listener
+        document.addEventListener("backbutton", onBackKeyDown, false);
+    }
+
+    // Handle the back button
+    //
+    function onBackKeyDown() {
+        document.addEventListener("backbutton",$scope.menu.setMainPage($rootScope.lastpage, {closeMenu: true}), false);
+    }
     </script>
 
   </head>
