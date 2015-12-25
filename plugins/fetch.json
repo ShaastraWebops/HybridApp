@@ -8,5 +8,13 @@
         "variables": {
             "URL_SCHEME": "mycoolapp"
         }
+    },
+    "cordova-plugin-geolocation": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-geolocation"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

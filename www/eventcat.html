@@ -4,17 +4,36 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.11/angular.min.js"></script>
     <script type="text/javascript" src="controller.js"></script>
      <link rel="stylesheet" href="css/eventcat.css">
+              <script>
+            // Wait for device API libraries to load
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        // Register the event listener
+        document.addEventListener("backbutton", onBackKeyDown, false);
+    }
+
+    // Handle the back button
+    //
+    function onBackKeyDown() {
+        document.addEventListener("backbutton",$scope.menu.setMainPage($rootScope.lastpage, {closeMenu: true}), false);
+    }
+    </script>
   </head>
 
   <body ng-app="app">
-
     <div ng-controller="events">
         <ons-toolbar> 
         <ons-row align="center">
         <div class="left">
           <ons-toolbar-button ng-click="menu.toggle()">
             <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
-          </ons-toolbar-button>
+          </ons-toolbar-button>Events
         </div>
         <div class="center"><div ng-hide="online"><h3 style="color:red">You're offline</h3></div></div>    
     <div class="right"></div>
@@ -29,7 +48,7 @@
         <ons-list-item modifier="chevron" ng-repeat="x in eventcats" ng-click="info(x._id)" class="list-item-container">
           <ons-row>
             <ons-col width="100%">
-              <img src="http://shaastra.org:8001/api/uploads/{{x.imageid}}/{{x.imagename}}" class="thumbnail">
+              <img ng-cache src="http://shaastra.org:8001/api/uploads/{{x.imageid}}/{{x.imagename}}" class="thumbnail">
             </ons-col>
               <div class="name centre">
                 {{x.title}}

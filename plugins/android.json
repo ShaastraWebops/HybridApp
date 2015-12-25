@@ -22,6 +22,16 @@
                             "xml": "<intent-filter><data android:scheme=\"mycoolapp\" /><action android:name=\"android.intent.action.VIEW\" /><category android:name=\"android.intent.category.DEFAULT\" /><category android:name=\"android.intent.category.BROWSABLE\" /></intent-filter>",
                             "count": 1
                         }
+                    ],
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
+                            "count": 1
+                        }
                     ]
                 }
             }
@@ -30,6 +40,9 @@
     "installed_plugins": {
         "cordova-plugin-customurlscheme": {
             "URL_SCHEME": "mycoolapp",
+            "PACKAGE_NAME": "com.example.helloworld"
+        },
+        "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "com.example.helloworld"
         }
     },

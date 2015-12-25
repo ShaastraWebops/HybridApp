@@ -11,7 +11,8 @@ module.exports = [
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "cordova-plugin-customurlscheme": "4.0.0"
+    "cordova-plugin-customurlscheme": "4.0.0",
+    "cordova-plugin-geolocation": "1.0.1"
 }
 // BOTTOM OF METADATA
 });

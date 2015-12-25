@@ -11,16 +11,35 @@
     <script type="text/javascript" src="controller.js"></script>
     <script>
       ons.bootstrap();
+                  // Wait for device API libraries to load
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        // Register the event listener
+        document.addEventListener("backbutton", onBackKeyDown, false);
+    }
+
+    // Handle the back button
+    //
+    function onBackKeyDown() {
+        document.addEventListener("backbutton",$scope.menu.setMainPage($rootScope.lastpage, {closeMenu: true}), false);
+    }
     </script>
    
   </head>
   <body ng-app="app">
+          
     <div ng-controller="eventdesc">
           <ons-page>
                 <ons-toolbar>        
       <div class="left">
-          <ons-toolbar-button ng-click="menu.toggle()">
-            <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+          <ons-toolbar-button ng-click="menu.setMainPage(menu.setMainPage(lastpage, {closeMenu: true}), {closeMenu: true})">
+            <ons-icon icon="ion-arrow-left-c" size="28px" fixed-width="false"></ons-icon>
           </ons-toolbar-button>
         </div>
      <div class="center" >
@@ -33,7 +52,7 @@
   </ons-toolbar>
       <div class="profile-card">
 
-        <img src="http://shaastra.org:8001/api/uploads/{{eve.imageid}}/{{eve.imagename}}" class="profile-image">
+        <img ng-cache src="http://shaastra.org:8001/api/uploads/{{eve.imageid}}/{{eve.imagename}}" class="profile-image">
         <div class="profile-name">{{eve.name}}</div>
         <div class="profile-id"><ons-icon icon="fa-map-marker"></ons-icon> {{eve.venue}}</div>
         <div class="profile-desc">{{eve.info}}</div>
@@ -51,22 +70,17 @@
           <ons-row>
             <ons-col class="info-col">
               <div class="info-num"  style="text-align:center;">
-                <ons-icon icon="fa-pencil"></ons-icon>
+                <ons-icon icon="fa-phone"></ons-icon>
               </div>
-              <div class="info-unit"  style="text-align:center;">Register</div>
+              <div class="info-unit"  style="text-align:center;"><a href="tel:+6494461709">Call Coordinator</a></div>
             </ons-col>
             <ons-col class="info-col" style="text-align:center;">
               <div class="info-num"  style="text-align:center;">
-                <ons-icon icon="fa-mobile-phone"></ons-icon>
+                <ons-icon icon="fa-home"></ons-icon>
               </div>
-              <div class="info-unit" style="text-align:center;">Contact Us</div>
+              <div class="info-unit" style="text-align:center;">Website</div>
             </ons-col>
-            <ons-col class="info-col" style="text-align:center;">
-              <div class="info-num">
-                <ons-icon icon="fa-home"  style="text-align:center;"></ons-icon>
-              </div>
-              <div class="info-unit" >Website</div>
-            </ons-col>
+            
           </ons-row>
         </ons-list-item>
       </ons-list>

@@ -28,8 +28,8 @@
 }
 
 .profile-image {
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   background-color: black;
@@ -53,8 +53,8 @@
 .profile-desc {
   font-size: 15px;
   opacity: 0.6;
-  width: 90%;
-  text-align: center;
+  width: 92%;
+  text-align: justify;
   margin: 0 auto;
 }
 
@@ -78,14 +78,14 @@
 
     </style>
 
-    <ons-page>
+    <ons-page style="background:#33393c!important;">
        <ons-toolbar>        
       <div class="left">
           <ons-toolbar-button ng-click="menu.toggle()">
             <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
           </ons-toolbar-button>
         </div>
-     <div class="center" >
+     <div class="center" style="font-variant: small-caps;">
       ABOUT US
       <div ng-hide="online"><h3 style="color:red">You're offline</h3></div>
       <!-- <center>{{currname}}</center> -->
@@ -97,16 +97,17 @@
 
 
       <div class="profile-card">
-
-        <img src="images/shaastra_dices.png" class="profile-image">
+        <iframe width="100%" frameborder="0" src="http://www.youtube.com/embed/JTnPoawdbHA"> </iframe>
+        <!--<img src="images/shaastra_dices.png" class="profile-image">
         <div class="profile-name">Shaastra</div>
-        <div class="profile-id">IIT Madras</div>
+        <div class="profile-id">IIT Madras</div>-->
+        <br><br>
         <div class="profile-desc">Shaastra is the annual technical festival of Indian Institute of Technology Madras, Chennai, India and the first ISO certified festival of its kind.
 
-          <br>
+          <br><br>
         
 Shaastra returns in its 18th edition, bringing with it an experience of innovation, competition and learning that has become its hallmark over the years.
-Mark the four days from January 2nd to January 5th, 2016 on your calendars, as Shaastra will keep you engrossed in a plethora of professional shows, competitions and lectures that have something for everybody. With some of the sharpest minds of the nation converging under one banner, one can expect to go back inspired.
+Mark the four days from January 2nd to January 5th, 2016 on your calendars, as Shaastra will keep you engrossed in a plethora of professional shows, competitions and lectures that have something for everybody. With some of the sharpest minds of the nation converging under one banner, one can expect to go back inspired.<br><br>
 The classic events of Shaastra shall return bigger and better and be joined by an injection of new exciting competitions. Envisage ​4​.0 will showcase several new acts crafted completely by students.​ Hand in hand, a group of international techno-artists will perform acts that are seldom seen in India and will surely leave you in awe.​ ​Robowars, Hackathon, Aeromodelling and several such competitions will both entertain and challenge the participants. One can also head back indoors to hear some of the pioneers of technology across the globe share their views on the latest happenings of the world. We shall also celebrate the ​Makers Movement and its powerful message of creating at an individual level through the Makers Summit, giving students a stage to ​network, learn and work with the most creative and inspired minds from across the country over a period of 4 days​.</div>
 
       </div>
