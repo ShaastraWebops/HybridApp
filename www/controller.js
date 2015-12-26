@@ -203,6 +203,7 @@ module.controller('eventdesc',function($scope,$http,$rootScope,$sce,localStorage
 {
   converter = new showdown.Converter();
   $rootScope.lastpage = 'event_page.html';
+  
   $scope.toggleGroup = function(group) {
     if ($scope.isGroupShown(group)) {
       $scope.shownGroup = null;
@@ -213,20 +214,23 @@ module.controller('eventdesc',function($scope,$http,$rootScope,$sce,localStorage
 
   $scope.message = 'Loading...';
 
-
   $scope.isGroupShown = function(group) {
     return $scope.shownGroup === group;
   };
-  var eventid =  localStorageService.get('eventid');
+  $scope.currid=localStorageService.get('currevent');
+  $scope.eid=localStorageService.get('eventid');
+  var eventid = $scope.eid;
   console.log(eventid);
   if(localStorageService.get(eventid))
   {
     console.log('stored');
     var res = localStorageService.get(eventid);
     $scope.tabs = res.eventTabs;
+    $scope.con=res.assignees;
+    console.log($scope.con);
     for(var i=0;i<$scope.tabs.length;i++){
       $scope.tabs[i].info = $sce.trustAsHtml(converter.makeHtml($scope.tabs[i].info));
-      //console.log($scope.tabs[i].info);
+      console.log($scope.tabs[i].info);
     }
     $scope.eve = res;
   }
@@ -237,10 +241,11 @@ module.controller('eventdesc',function($scope,$http,$rootScope,$sce,localStorage
   {
     localStorageService.set(eventid,response);
     $scope.tabs = response.eventTabs;
+    $scope.con=reponse.assignees;
     //console.log($scope.tabs);
     for(var i=0;i<$scope.tabs.length;i++){
       $scope.tabs[i].info = $sce.trustAsHtml(converter.makeHtml($scope.tabs[i].info));
-      //console.log($scope.tabs[i].info);
+      console.log($scope.tabs[i].info);
     }
     $scope.eve = response;
   }).error(
@@ -252,6 +257,15 @@ module.controller('eventdesc',function($scope,$http,$rootScope,$sce,localStorage
 $scope.backbutton=function(){
  document.addEventListener("backbutton",$scope.menu.setMainPage($rootScope.lastpage, {closeMenu: true}), false);
     }
+     ons.ready(function() {
+    $scope.show = function() {
+      $scope.contacts.show();
+    };
+   
+    ons.createDialog('list.html').then(function(dialog) {
+      $scope.contacts = dialog;
+    });
+  });
     //document.addEventListener("deviceready", $scope.backbutton, false);
 });
           //Map controller

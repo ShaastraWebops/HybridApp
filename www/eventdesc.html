@@ -30,11 +30,49 @@
         document.addEventListener("backbutton",$scope.menu.setMainPage($rootScope.lastpage, {closeMenu: true}), false);
     }
     </script>
-   
+   <style>
+    .profile-image {
+      width: 100%;
+      height: 100%;
+      border-radius: 0px;
+      background-color: black;
+      border 1px solid white;
+      box-shadow:rgba(0, 0, 0, 0.2) 0px 2px 0px 0px;
+      -webkit-box-shadow:rgba(0, 0, 0, 0.2) 0px 2px 0px 0px;
+    }
+
+    .profile-name {
+      margin: 20px 0 0 0;
+      font-weight: 600;
+      font-size: 17px;
+    }
+
+    .profile-id {
+      margin: 0 0 5px 0;
+      font-size: 14px;
+      opacity: 0.6;
+    }
+    
+    .profile-desc {
+      font-size: 15px;
+      opacity: 0.6;
+      width: 90%;
+      text-align: center;
+      margin: 0 auto;
+    }
+    
+    #contactlist a
+    {
+        text-decoration: none;
+        color: #173e43;
+    }
+   </style>
   </head>
   <body ng-app="app">
           
-    <div ng-controller="eventdesc">
+    <div  ng-controller="eventdesc">
+    
+        
           <ons-page>
                 <ons-toolbar>        
       <div class="left">
@@ -69,17 +107,18 @@
         <ons-list style="padding-left:12%;">
         <ons-list-item style="height:90px;">
           <ons-row>
+          <a ng-click="show()">
             <ons-col class="info-col">
               <div class="info-num"  style="text-align:center;">
                 <ons-icon icon="fa-phone"></ons-icon>
               </div>
-              <div class="info-unit"  style="text-align:center;"><a href="tel:+6494461709">Call Coordinator</a></div>
-            </ons-col>
+              <div class="info-unit"  style="text-align:center;">Call a Coordinator</div>
+            </ons-col></a>
             <ons-col class="info-col" style="text-align:center;">
               <div class="info-num"  style="text-align:center;">
                 <ons-icon icon="fa-home"></ons-icon>
               </div>
-              <div class="info-unit" style="text-align:center;">Website</div>
+              <a href="http://www.shaastra.org/#/event/{{currid}}/{{eid}}"><div class="info-unit" style="text-align:center;">Website</div></a>
             </ons-col>
             
           </ons-row>
@@ -106,9 +145,21 @@
     </ons-list>            
 
     </ons-page>
-        </div>
-
-
-
+    <ons-template id="list.html">
+      <ons-dialog var="dialog" cancelable >
+        <ons-toolbar inline>
+            <div class="center">
+              Event Coordinators
+            </div>
+          </ons-toolbar>
+        <ons-list id="contactlist">
+          <ons-list-item modifier="tappable" ng-repeat="x in con">
+            <a href="tel:{{x.phoneNumber}}"><ons-icon icon="fa-phone" ></ons-icon>&nbsp;&nbsp;{{x.name}}</a>
+          </ons-list-item>
+        </ons-list>
+     </ons-dialog>
+    </ons-template>
+    </div>
   </body>
+  
 </html>
