@@ -22,6 +22,22 @@
         document.addEventListener("backbutton",$scope.menu.setMainPage($rootScope.lastpage, {closeMenu: true}), false);
     }
     </script>
+    <style>
+    .list-item-content
+    {
+        text-align: start;
+        padding:10px 20px 10px 5px;
+    }
+    .desc
+    {
+      overflow-wrap: break-word;
+      overflow : hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+    </style>
 </head>
 
 <body ng-app="app" >
@@ -44,14 +60,11 @@
           <div ng-if="!events.length">
         <h2>{{ message }}</h2>
       </div>
-
         <div ng-repeat="event in events">
-        <ons-list-item modifier="chevron" class="list-item-container" ng-click="next(event._id,event.imagename,event.imageid)">
-          <div class="list-item-left">
-            <img ng-cache ng-src="http://shaastra.org:8001/api/uploads/{{event.imageid}}/{{event.imagename}}" class="avator" style="width:50px;height:50px;">
-          </div>
-          <div class="list-item-right">
-            <div class="list-item-content" style="margin-left:60px;">
+        <ons-list-item modifier="chevron" style="background-color:#173e43;" class="list-item-container" ng-click="next(event._id,event.imagename,event.imageid)">
+          
+          <div class="list-item">
+            <div class="list-item-content">
         <div class="name">{{event.name}}
               </div>
               <div class="desc">
