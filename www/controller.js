@@ -226,8 +226,7 @@ module.controller('eventdesc',function($scope,$http,$rootScope,$sce,localStorage
     console.log('stored');
     var res = localStorageService.get(eventid);
     $scope.tabs = res.eventTabs;
-    $scope.con=res.assignees;
-    console.log($scope.con);
+    $rootScope.con=res.assignees;
     for(var i=0;i<$scope.tabs.length;i++){
       $scope.tabs[i].info = $sce.trustAsHtml(converter.makeHtml($scope.tabs[i].info));
       console.log($scope.tabs[i].info);
@@ -241,7 +240,7 @@ module.controller('eventdesc',function($scope,$http,$rootScope,$sce,localStorage
   {
     localStorageService.set(eventid,response);
     $scope.tabs = response.eventTabs;
-    $scope.con=reponse.assignees;
+    $rootScope.con=reponse.assignees;
     //console.log($scope.tabs);
     for(var i=0;i<$scope.tabs.length;i++){
       $scope.tabs[i].info = $sce.trustAsHtml(converter.makeHtml($scope.tabs[i].info));
