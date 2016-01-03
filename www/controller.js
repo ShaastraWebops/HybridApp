@@ -1,5 +1,5 @@
 // This is a JavaScript file
-var module = angular.module('app', ['onsen','ngAnimate','LocalStorageModule']);
+var module = angular.module('app', ['onsen','ngAnimate','LocalStorageModule','ngSanitize']);
 
 
 module.run(function($window, $rootScope) {
@@ -225,6 +225,7 @@ module.controller('eventdesc',function($scope,$http,$rootScope,$sce,localStorage
   {
     console.log('stored');
     var res = localStorageService.get(eventid);
+    console.log("second time??   if(localStorageService.get(eventid)) ");
     $scope.tabs = res.eventTabs;
     $rootScope.con=res.assignees;
     for(var i=0;i<$scope.tabs.length;i++){
@@ -239,8 +240,9 @@ module.controller('eventdesc',function($scope,$http,$rootScope,$sce,localStorage
   $http.get('http://shaastra.org:8001/api/events/showWeb/'+eventid).success(function(response)
   {
     localStorageService.set(eventid,response);
+    console.log("second time??   if(localStorageService.get(eventid)) ELSE");
     $scope.tabs = response.eventTabs;
-    $rootScope.con=reponse.assignees;
+    //$rootScope.con=reponse.assignees;
     //console.log($scope.tabs);
     for(var i=0;i<$scope.tabs.length;i++){
       $scope.tabs[i].info = $sce.trustAsHtml(converter.makeHtml($scope.tabs[i].info));
