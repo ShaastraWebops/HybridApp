@@ -57,8 +57,9 @@
     <div class="profile-card">
         <img ng-src="{{currimage}}" class="event-image">
       </div>
-          <div ng-if="!events.length">
-        <h2>{{ message }}</h2>
+           <div align="center" ng-if="!events.length">
+        <h2>Loading...</h2>
+        <img  src="images/ring.gif"/>
       </div>
         <div ng-repeat="event in events">
          <ons-list-item modifier="chevron" class="list-item-container" ng-click="next(event._id,event.imagename,event.imageid)">

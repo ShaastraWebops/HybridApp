@@ -225,9 +225,14 @@ module.controller('eventdesc',function($scope,$http,$rootScope,$sce,localStorage
   {
     console.log('stored');
     var res = localStorageService.get(eventid);
-    console.log("second time??   if(localStorageService.get(eventid)) ");
+    //console.log("second time??   if(localStorageService.get(eventid)) ");
     $scope.tabs = res.eventTabs;
+   
+    
+    //console.log("res.assignees if  {};");
     $rootScope.con=res.assignees;
+    //console.log($rootScope.con);
+    //console.log("res.assignees if  {};");
     for(var i=0;i<$scope.tabs.length;i++){
       $scope.tabs[i].info = $sce.trustAsHtml(converter.makeHtml($scope.tabs[i].info));
       console.log($scope.tabs[i].info);
@@ -240,10 +245,13 @@ module.controller('eventdesc',function($scope,$http,$rootScope,$sce,localStorage
   $http.get('http://shaastra.org:8001/api/events/showWeb/'+eventid).success(function(response)
   {
     localStorageService.set(eventid,response);
-    console.log("second time??   if(localStorageService.get(eventid)) ELSE");
+    //console.log("second time??   if(localStorageService.get(eventid)) ELSE");
     $scope.tabs = response.eventTabs;
-    //$rootScope.con=reponse.assignees;
-    //console.log($scope.tabs);
+    $rootScope.con=response.assignees;
+    //console.log("RESPONSE else");
+    //console.log(response);
+    //console.log("RESPONSE else");
+
     for(var i=0;i<$scope.tabs.length;i++){
       $scope.tabs[i].info = $sce.trustAsHtml(converter.makeHtml($scope.tabs[i].info));
       console.log($scope.tabs[i].info);
