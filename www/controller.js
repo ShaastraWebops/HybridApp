@@ -123,7 +123,7 @@ module.controller('eventlist',function($scope, $http,$rootScope,localStorageServ
   $http.get('http://shaastra.org:8001/api/eventLists/events/'+currid).success(function(response) 
   {
 
-       $
+       
        $scope.currinfo=response.info;
        $scope.currname=response.title;
        //console.log($scope.currinfo);
@@ -274,13 +274,20 @@ module.controller('MapController', function($scope, $timeout,$rootScope){
 
    
        
-       ons.createPopover('popover.html').then(function(popover) {
-        $scope.popover = popover;
-      });
-      
-      $scope.show = function(e) {
-        $scope.popover.show(e);
-      };
+        
+        $scope.dialogs = {};
+
+        $scope.show = function(dlg) {
+          if (!$scope.dialogs[dlg]) {
+            ons.createDialog(dlg).then(function(dialog) {
+              $scope.dialogs[dlg] = dialog;
+              dialog.show();
+            });
+          } else {
+            $scope.dialogs[dlg].show();
+          }
+        }
+       
      
         $scope.formData = {};
 

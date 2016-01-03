@@ -1,4 +1,5 @@
 <ons-page ng-controller="MapController">
+
       <ons-toolbar>
         <div class="left">
           <ons-toolbar-button ng-click="menu.toggle()">
@@ -10,9 +11,6 @@
       
   
   
-        <div class="right">
-           
-          </div>
       </ons-toolbar>
     
 
@@ -48,7 +46,25 @@
  
   <ons-button modifier="small--cta" ng-click ="calcRoute()">
    GO!
-   </ons-button
+   </ons-button>
+<br>
+<br>
+     <ons-button modifier="small--cta" ng-click ="show('dialog.html')" modifier="tappable">
+  Details of Locations
+   </ons-button>
+
+<ons-template id="dialog.html">
+  <ons-dialog var="dialog" modifier="material" cancelable>
+    <div style="padding: 0 22px 22px 22px">
+    <ons-list>
+  <ons-list-header>Details of Locations</ons-list-header>
+  <ons-list-item>CLT : Central lecture theatre</ons-list-item>
+  <ons-list-item>SAC :Students Activity Center</ons-list-item>
+  <ons-list-item>OAT :Open Air Theater</ons-list-item>
+</ons-list>
+    </div>
+  </ons-dialog>
+</ons-template>
 
 
     </ons-page>
