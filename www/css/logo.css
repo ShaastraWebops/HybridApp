@@ -5,14 +5,14 @@
 {
     position: absolute;
     top:10%;
-    left: 5%;
+    left: 0%;
 }
 
 #mid
 {
     position: absolute;
     top:10%;
-    left: 5%;
+    left: 0%;
     animation-name: arotation;
     animation-timing-function: linear;
     animation-duration: 25s;
@@ -27,7 +27,7 @@
 {
     position: absolute;
     top:10%;
-    left: 5%;
+    left: 0%;
     animation-name: crotation;
     animation-timing-function: linear;
     animation-duration: 25s;
