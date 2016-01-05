@@ -16,5 +16,14 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "mx.ferreyra.callnumber": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Rohfosho/CordovaCallNumberPlugin.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

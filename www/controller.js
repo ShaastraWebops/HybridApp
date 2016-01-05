@@ -211,8 +211,21 @@ module.controller('eventdesc',function($scope,$http,$rootScope,$sce,localStorage
       $scope.shownGroup = group;
     }
   };
-
+  
+ 
   $scope.message = 'Loading...';
+
+  $scope.callred = function(group) {
+      console.log("In");
+      document.location.href = "http://www.cnn.com";
+  };
+  
+ $scope.CopyToClipboard = function(text) {
+    Copied = text.createTextRange();
+    Copied.execCommand("Copy");
+ };
+
+
 
   $scope.isGroupShown = function(group) {
     return $scope.shownGroup === group;
@@ -248,9 +261,9 @@ module.controller('eventdesc',function($scope,$http,$rootScope,$sce,localStorage
     //console.log("second time??   if(localStorageService.get(eventid)) ELSE");
     $scope.tabs = response.eventTabs;
     $rootScope.con=response.assignees;
-    //console.log("RESPONSE else");
-    //console.log(response);
-    //console.log("RESPONSE else");
+    console.log("$rootScope.con else");
+    console.log($rootScope.con);
+    console.log("$rootScope.con else");
 
     for(var i=0;i<$scope.tabs.length;i++){
       $scope.tabs[i].info = $sce.trustAsHtml(converter.makeHtml($scope.tabs[i].info));

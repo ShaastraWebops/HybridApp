@@ -21,6 +21,9 @@
   <feature name="App">
     <param name="android-package" value="org.apache.cordova.App"/>
   </feature>
+  <uses-permission android:autoLink="phone" />
+  <access origin="tel:*" launch-external="yes" />
+  <access origin="mailto:*" launch-external="yes" />
   <preference name="AllowInlineMediaPlayback" value="false"/>
   <preference name="AutoHideSplashScreen" value="true"/>
   <preference name="BackupWebStorage" value="cloud"/>

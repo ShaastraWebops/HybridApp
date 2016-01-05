@@ -22,7 +22,15 @@
     function onDeviceReady() {
         // Register the event listener
         document.addEventListener("backbutton", onBackKeyDown, false);
+        document.location.href = 'tel:*';
     }
+
+
+    function myFunction() {
+        console.log("In");
+        document.location.href = "http://www.cnn.com";
+    }
+
 
     // Handle the back button
     //
@@ -123,8 +131,8 @@
           </ons-toolbar>
         <ons-list id="contactlist" >
         <div >
-          <ons-list-item modifier="tappable" ng-repeat="x in con">
-            <a href="tel:{{x.phoneNumber}}"><ons-icon icon="fa-phone" style="color:#37C837;"></ons-icon>&nbsp;&nbsp;{{x.name}}</a>
+          <ons-list-item modifier="tappable" ng-repeat="x in con">&nbsp;&nbsp;
+            <a  class="button icon-left ion-ios7-telephone button-calm button-outline" ng-href="tel:+91{{x.phoneNumber}}"><ons-icon icon="fa-phone" style="color:#37C837;"></ons-icon>&nbsp;&nbsp;{{x.name}}</a><ons-list-item><textarea rows="1"  ng-click="CopyToClipboard(this)" readonly>+91{{x.phoneNumber}}</textarea></ons-list-item>
           </ons-list-item>
           </div> 
         </ons-list>
