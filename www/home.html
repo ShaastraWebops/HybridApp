@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="components/loader.js"></script>
+     <script src="ms.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/events.css">
+    <link rel="stylesheet" href="css/home.css"> 
+    <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.min.css">
+    <script type="text/javascript" src="controller.js"></script>
+    <script type="text/javascript" src="components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="components/bootstrap//dist/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" href="lib/onsen/css/onsenui.css">  
+ 
+    <link rel="stylesheet" href="css/logo.css"/>
+    <link rel="stylesheet" href="css/profile.css"/>
+    
+  <script src="lib/onsen/js/angular/angular.js"></script>
+  <script src="lib/onsen/js/onsenui.js"></script>    
+  <script type="text/javascript" src="components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+  <script type="text/javascript" src="components/imgcache.js/js/imgcache.js"></script>
+  <script type="text/javascript" src="ngImgCache.js"></script>
+
+  <script src="loader.js"></script>
+  
+  <script src="controller.js"></script>
+
+
+
+
+  </head>
+  <body style="background:#f3f3f3;">
+  <style>
+    .center {
+        margin: auto;
+      
+    }
+    
+    
+</style>
+
+    <ons-page on-device-backbutton="menu.setMainPage('ShowsandExhibition.html', {closeMenu: true})">
+       <ons-toolbar>        
+      <div class="left">
+          <ons-toolbar-button ng-click="menu.toggle()">
+            <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+     <div class="center" style="font-variant: small-caps;">
+     Home
+  
+      <!-- <center>{{currname}}</center> -->
+    </div>   
+    <div class="right">
+          <!-- <ons-toolbar-button><ons-icon icon="ion-gear-a" style="vertical-align: -4px; font-size: 28px;"></ons-icon></ons-toolbar-button> -->
+        </div>
+  </ons-toolbar>
+
+ <div class="profile-card">
+    
+      
+    <img src="images/bottom.png" class="event-image" style="z-index:1;height:84%;"  id="bottom"/>
+    <img src="images/mid.png" class="event-image" style="z-index:2;height:84%;"  id="mid" />
+    <img src="images/top.png" class="event-image" style="z-index:3;height:84%;"  id="top" /> 
+
+
+</div>
+
+<div style="background-color: #173e43; position: fixed;bottom: 0;width: 100%;z-index:5;">
+    <h3 style="color:white"> Shaastra 2016</h3>
+    <p style="color:white"> The annual technical festival of IIT MADRAS</p>
+</div>
+
+
+<div class="container home">
+  <div id="main-div" class="container-fluid homepage-main">
+    <div class="row main-center">
+      <div class="col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10">
+        <h3>THE MAKERS HAVE ARRIVED!</h3>
+        <p>This January, at Shaastra, thousands of like minded people will gather to witness one of India's biggest Maker events.
+      </div>
+    </div>
+    <div class="row homepage-makers-tab">
+      <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 col-lg-5 col-md-5 col-sm-5 col-xs-10">
+        <img alt="shaastra-do-it-yourself" src="images/do-it-yourself.jpg" class="main-images">
+      </div>
+      <div class="col-xs-offset-1 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 col-lg-5 col-md-5 col-sm-5 col-xs-10">
+        <h3>DO-IT-YOURSELF, DON'T CALL THE GUY</h3>
+        <p>This is the underlying principle the maker community thrives on. Come to Shaastra this January and realise how every problem can be solved with your bare hands. And don’t forget to bring the spirit to create!</p>
+      </div>
+    </div>
+    <hr class="separator">
+    <div class="row homepage-makers-tab">
+      <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 col-lg-5 col-md-5 col-sm-5 col-xs-10">
+        <h3>UNITING MAKER BODIES</h3>
+        <p>Makerspaces are DIY places where people join together to create, invent and share knowledge.This Shaastra come visit our own makerspace - The Centre for Innovation (a.k.a The CΦ).</p>
+        <br>
+        <p>In Shaastra's maker summit, students from various backgrounds including engineering, arts and sciences, come together, thereby contributing to a bright minded gathering of tech enthusiasts, crafters, engineers, authors and artists to innovate and create products across a wide range of topics.</p>
+      </div>
+      <div class="col-xs-offset-1 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 col-lg-5 col-md-5 col-sm-5 col-xs-10">
+        <img alt="shaastra-unite-maker" src="images/maker-space.jpg" class="main-images">
+      </div>
+    </div>
+    <hr class="separator">
+    <div class="row homepage-makers-tab">
+      <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 col-lg-5 col-md-5 col-sm-5 col-xs-10">
+        <img alt="shaastra-maker-fare" src="images/Maker-fare.jpg" class="main-images">
+      </div>
+      <div class="col-xs-offset-1 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 col-lg-5 col-md-5 col-sm-5 col-xs-10">
+        <h3>FROM PASSIVE USERS TO ACTIVE CREATORS</h3>
+        <p>Ever wondered how the touch screen on your mobile screen works? When your finger touches the screen, a voltage drop is instantaneously created which instructs the phone to call a particular function. Maybe that’s why you’re not allowed to use your phone in a gas station!</p>
+        <br>
+        <p>In Shaastra 2016, you will not only witness some of the coolest forms of technology but will also add on and give it your own personal "touch".</p>
+      </div>
+    </div>
+    <hr class="separator">
+    <div class="row homepage-makers-tab">
+      <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 col-lg-5 col-md-5 col-sm-5 col-xs-10">
+        <h3>PAPER PLANES TO QUADCOPTERS</h3>
+        <p>Right from an origami throne maker to a quadcopter drone maker - Makers are a diverse bunch.</p>
+        <p>Creators. Innovators. Entrepreneurs. Designers. Dreamers.</p>
+        <p>Everyone is a maker.</p>
+     </hr>
+        <p>You are a maker.</p>
+     </hr>
+      </div>
+      <div class="col-xs-offset-1 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 col-lg-5 col-md-5 col-sm-5 col-xs-10">
+        <img alt="shaastra-paper-plane-to-quadrotor" src="images/paper-plane-to-quadrotor.jpg" class="main-images">
+      </div>
+    </div>
+    <div class="row main-center">
+      <h2>COME LIVE THE MAKER IN YOU!</h2>
+    </div>
+  </div>
+
+  </div>
+  </ons-page>
+
+  </body>
+</html>

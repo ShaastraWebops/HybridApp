@@ -1,0 +1,72 @@
+
+/*Logo*/
+
+#top
+{
+    position: absolute;
+    top:10%;
+    left: 0%;
+}
+
+#mid
+{
+    position: absolute;
+    top:10%;
+    left: 0%;
+    animation-name: arotation;
+    animation-timing-function: linear;
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: arotation;
+    -webkit-animation-duration: 25s;
+    -webkit-animation-timing-function:linear;
+    -webkit-animation-iteration-count: infinite;
+ }
+
+#bottom
+{
+    position: absolute;
+    top:10%;
+    left: 0%;
+    animation-name: crotation;
+    animation-timing-function: linear;
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: crotation;
+    -webkit-animation-duration: 25s;
+    -webkit-animation-timing-function:linear;
+    -webkit-animation-iteration-count: infinite;
+}
+
+/*Animation*/
+
+@keyframes arotation {
+    0%   {transform:rotate(0deg);}
+    25%  {transform:rotate(90deg);}
+    50%  {transform:rotate(180deg);}
+    100% {transform:rotate(360deg);}
+}
+
+@keyframes crotation {
+    0%   {transform:rotate(0deg);}
+    25%  {transform:rotate(-90deg);}
+    50%  {transform:rotate(-180deg);}
+    100% {transform:rotate(-360deg);}
+}
+
+@-webkit-keyframes arotation {
+   0%   {transform:rotate(0deg);}
+    25%  {transform:rotate(90deg);}
+    50%  {transform:rotate(180deg);}
+    100% {transform:rotate(360deg);}
+}
+
+@-webkit-keyframes crotation {
+    0%   {transform:rotate(0deg);}
+    25%  {transform:rotate(-90deg);}
+    50%  {transform:rotate(-180deg);}
+    100% {transform:rotate(-360deg);}
+}
+
+
+

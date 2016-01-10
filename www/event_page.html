@@ -1,4 +1,4 @@
-<ons-page>
+<ons-page on-device-backbutton="menu.setMainPage('eventcat.html', {closeMenu: true})">
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.11/angular.min.js"></script>
     <script type="text/javascript" src="controller.js"></script>
@@ -22,6 +22,22 @@
         document.addEventListener("backbutton",$scope.menu.setMainPage($rootScope.lastpage, {closeMenu: true}), false);
     }
     </script>
+    <style>
+    .list-item-content
+    {
+        text-align: start;
+        padding:10px 20px 10px 5px;
+    }
+    .desc
+    {
+      overflow-wrap: break-word;
+      overflow : hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+    </style>
 </head>
 
 <body ng-app="app" >
@@ -41,17 +57,18 @@
     <div class="profile-card">
         <img ng-src="{{currimage}}" class="event-image">
       </div>
-          <div ng-if="!events.length">
-        <h2>{{ message }}</h2>
+           <div align="center" ng-if="!events.length">
+        <h2>Loading...</h2>
+        <img  src="images/ring.gif"/>
       </div>
-
         <div ng-repeat="event in events">
-        <ons-list-item modifier="chevron" class="list-item-container" ng-click="next(event._id,event.imagename,event.imageid)">
+         <ons-list-item modifier="chevron" class="list-item-container" ng-click="next(event._id,event.imagename,event.imageid)">
           <div class="list-item-left">
-            <img ng-cache ng-src="http://shaastra.org:8001/api/uploads/{{event.imageid}}/{{event.imagename}}" class="avator" style="width:50px;height:50px;">
+             <img ng-cache ng-src="http://shaastra.org:8001/api/uploads/{{event.imageid}}/{{event.imagename}}" class="avator" style="width:50px;height:50px;">
           </div>
-          <div class="list-item-right">
+           <div class="list-item-right">
             <div class="list-item-content" style="margin-left:60px;">
+
         <div class="name">{{event.name}}
               </div>
               <div class="desc">

@@ -9,10 +9,19 @@
             "URL_SCHEME": "mycoolapp"
         }
     },
-    "cordova-plugin-file": {
+    "cordova-plugin-geolocation": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-file"
+            "id": "cordova-plugin-geolocation"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "mx.ferreyra.callnumber": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Rohfosho/CordovaCallNumberPlugin.git",
+            "subdir": "."
         },
         "is_top_level": true,
         "variables": {}

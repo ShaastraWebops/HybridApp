@@ -1,5 +1,5 @@
 // This is a JavaScript file
-var module = angular.module('app', ['onsen','ngAnimate','LocalStorageModule']);
+var module = angular.module('app', ['onsen','ngAnimate','LocalStorageModule','ngSanitize']);
 
 
 module.run(function($window, $rootScope) {
@@ -122,8 +122,6 @@ module.controller('eventlist',function($scope, $http,$rootScope,localStorageServ
 
   $http.get('http://shaastra.org:8001/api/eventLists/events/'+currid).success(function(response) 
   {
-
-       $
        $scope.currinfo=response.info;
        $scope.currname=response.title;
        //console.log($scope.currinfo);
@@ -170,20 +168,14 @@ module.controller('events',function($scope, $http,$rootScope,localStorageService
         console.log('repetition');
       }
     else
+
     {
-    $http.get('http://shaastra.org:8001/api/eventLists').success(function(response) 
-    {
+        response = [{"_id":"560c1e5ce293fd414ae513ff","title":"Aerofest","info":"Aerofest events","imageid":"5628dc5cce3ee9fa05a34ee9","imagename":"aerofest.svg","createdOn":"2015-09-30T17:39:40.522Z","updatedOn":"2015-10-22T12:53:48.133Z","createdBy":"560b7d4523219ea1374eb174","lastUpdatedBy":"560b7d4523219ea1374eb174","__v":4,"events":["5613fcb748c6f66a43b16b6c","561579fdc8d15f6e1252f181","56157a96c8d15f6e1252f1de","56157cb6c8d15f6e1252f2cc"]},{"_id":"560c1e93e293fd414ae51405","title":"Design and Build","info":"Design and Build events","imageid":"5628dc80ce3ee9fa05a34f0a","imagename":"Design and build.svg","createdOn":"2015-09-30T17:40:35.901Z","updatedOn":"2015-12-23T12:48:39.833Z","createdBy":"560b7d4523219ea1374eb174","lastUpdatedBy":"560b7d4523219ea1374eb174","__v":11,"events":["5615670dc8d15f6e1252ebd5","56156f0dc8d15f6e1252ed5b","561570e3c8d15f6e1252eda3","561572bdc8d15f6e1252ee75","5615757fc8d15f6e1252ef5e","561576c9c8d15f6e1252f03d","5615785ac8d15f6e1252f0e7","5637a7d57763fa031564ca02","5637a93c7763fa031564ca8d","567a978955166909741b0911","567a978955166909741b0912"]},{"_id":"56155228c8d15f6e1252e9db","title":"Electronics Fest","info":"Electronics Fest","imageid":"5628dc91ce3ee9fa05a34f1f","imagename":"electroicsfest.svg","createdOn":"2015-10-07T17:11:04.951Z","updatedOn":"2015-10-22T12:54:41.262Z","createdBy":"560bb1e4e293fd414ae513dd","lastUpdatedBy":"560bb1e4e293fd414ae513dd","__v":7,"events":["56156b8fc8d15f6e1252ec71","56163cbf60a6e1d661bd9297","561641a860a6e1d661bd92b3","561641a860a6e1d661bd92b4","561643b260a6e1d661bd92e7","5616449560a6e1d661bd9307","5677ed0ac661c3730efe3c5a"]},{"_id":"560b7e1d23219ea1374eb17a","title":"Coding","info":"Coding events","imageid":"5628dca0ce3ee9fa05a34f2a","imagename":"coding.svg","createdOn":"2015-09-30T06:15:57.654Z","updatedOn":"2015-10-22T12:54:56.681Z","createdBy":"560b7d4523219ea1374eb174","lastUpdatedBy":"560b7d4523219ea1374eb174","__v":10,"events":["561554aac8d15f6e1252e9e9","56155ae8c8d15f6e1252ea20","56155d51c8d15f6e1252ea75","56155f79c8d15f6e1252eac0","56156011c8d15f6e1252ead8","56156131c8d15f6e1252eb3f","56193752ce3ee9fa05a28810","56272dafce3ee9fa05a33430","565468901f005e2b52dfc746"]},{"_id":"561554d4c8d15f6e1252e9ee","title":"Involve","info":"SPEED CHESS, PUZZLE CHAMP, SHAASTRA CUBE OPEN, SUDOKU CHAMPIONSHIP","imageid":"5628df16ce3ee9fa05a34fcd","imagename":"involve.svg","createdOn":"2015-10-07T17:22:28.600Z","updatedOn":"2015-10-24T20:32:14.402Z","createdBy":"560bb1dce293fd414ae513db","lastUpdatedBy":"560bb1dce293fd414ae513db","__v":7,"events":["56156ba9c8d15f6e1252ec8e","56157533c8d15f6e1252ef49","56165e2f60a6e1d661bd93f3","5616612d60a6e1d661bd9430","565b17f98c5334e15edb292f"]},{"_id":"56155713c8d15f6e1252e9fe","title":"Quizzing","info":"SJQ,SMQ,HTW,SCENT QUIZ","imageid":"5628dd16ce3ee9fa05a34f5d","imagename":"quizzing.svg","createdOn":"2015-10-07T17:32:03.529Z","updatedOn":"2015-11-16T07:24:48.997Z","createdBy":"560bb1dce293fd414ae513db","lastUpdatedBy":"560bb1dce293fd414ae513db","__v":8,"events":["56155e66c8d15f6e1252ea9c","5615689ac8d15f6e1252ec1a","56156becc8d15f6e1252eca4","561934d2ce3ee9fa05a28797"]},{"_id":"561567aac8d15f6e1252ebee","title":"Workshops","info":"Shaastra 2016 Workshops","imageid":"5628dce4ce3ee9fa05a34f47","imagename":"Workshops.svg","createdOn":"2015-10-07T18:42:50.992Z","updatedOn":"2015-10-22T12:56:04.256Z","createdBy":"560badd8e293fd414ae513d5","lastUpdatedBy":"560badd8e293fd414ae513d5","__v":34,"events":["561568c4c8d15f6e1252ec1d","5615696ac8d15f6e1252ec2a","5615696fc8d15f6e1252ec2d","56156a57c8d15f6e1252ec3c","56156a8fc8d15f6e1252ec40","56156acac8d15f6e1252ec43","56156b2ac8d15f6e1252ec5b","56156ce2c8d15f6e1252ecd8","56156cf1c8d15f6e1252ece3","56156d2bc8d15f6e1252ecff","56156d49c8d15f6e1252ed09","56156d96c8d15f6e1252ed1e","56156e30c8d15f6e1252ed34","562cbfb1cb9bd8dc74297c29","562dc62fcb9bd8dc74298e5f","562dc919cb9bd8dc74298ec4","562dcb0bcb9bd8dc74298ef2","562e2ccaae3df7b05ea0e8a9","56321c87b8c13b1866677b52","5635961a7763fa031564953e","563b9698e1d37ef507c0c1fc","564327a83b0ebfa9774b08c4","564327aa3b0ebfa9774b08c7","56434b64c65971887fdc99fb","5648302b1bc77e6d7a53a2d8","5649f0912cd751d967df14ac","5649f3492cd751d967df16fa","564c5f1d5e7fc5917c41fe3e","564c66995e7fc5917c420123","565063be6bc8c41c450b2cd2","565b16e58c5334e15edb281b","565c8d77cede92af6962bba1","5677d3f1d3977f714673726b"]},{"_id":"561574e7c8d15f6e1252ef1a","title":"Research Events and Workshops","info":"Under Research events we have research level Competitions, Workshops and Research Expo.","imageid":"5628dcfece3ee9fa05a34f52","imagename":"research.svg","createdOn":"2015-10-07T19:39:19.913Z","updatedOn":"2015-12-23T15:24:56.584Z","createdBy":"560bc7e2e293fd414ae513eb","lastUpdatedBy":"560bc7e2e293fd414ae513eb","__v":8,"events":["56169807e581b3a41edd143e","56169b9fe581b3a41edd1525","5616bdc6e581b3a41edd19f0","5616c32ce581b3a41edd1a4f","5616c5d3e581b3a41edd1a80","562def42cb9bd8dc742991ae","565d33d0fb9d39962a869bd0","567a84de55166909741b03d4"]},{"_id":"560c1e25e293fd414ae513fa","title":"B - Events","info":"B - Events","imageid":"562826a7ce3ee9fa05a343fb","imagename":"B events (3).svg","createdOn":"2015-09-30T17:38:45.228Z","updatedOn":"2015-12-20T16:04:02.392Z","createdBy":"560b7d4523219ea1374eb174","lastUpdatedBy":"560b7d4523219ea1374eb174","__v":33,"events":["5615668fc8d15f6e1252ebbd","561654a260a6e1d661bd9384","5616558f60a6e1d661bd939a","5616a9eee581b3a41edd175d","5627d985ce3ee9fa05a34082"]}];
         //console.log(response);
         localStorageService.set('eventLists',response);
         $scope.eventcats = response;
-        console.log('first time');
+        console.log(response);
         //console.log($scope.eventcats);
-    })
-    .error(
-    function(response)
-    {
-      console.log("error:"+ response.error_message);
-    });
     }
     $scope.message = 'Loading...';
 
@@ -215,23 +207,44 @@ module.controller('eventdesc',function($scope,$http,$rootScope,$sce,localStorage
       $scope.shownGroup = group;
     }
   };
-
+  
+ 
   $scope.message = 'Loading...';
+
+  $scope.callred = function(group) {
+      console.log("In");
+      document.location.href = "http://www.cnn.com";
+  };
+  
+ $scope.CopyToClipboard = function(text) {
+    Copied = text.createTextRange();
+    Copied.execCommand("Copy");
+ };
+
 
 
   $scope.isGroupShown = function(group) {
     return $scope.shownGroup === group;
   };
-  var eventid =  localStorageService.get('eventid');
+  $scope.currid=localStorageService.get('currevent');
+  $scope.eid=localStorageService.get('eventid');
+  var eventid = $scope.eid;
   console.log(eventid);
   if(localStorageService.get(eventid))
   {
     console.log('stored');
     var res = localStorageService.get(eventid);
+    //console.log("second time??   if(localStorageService.get(eventid)) ");
     $scope.tabs = res.eventTabs;
+   
+    
+    //console.log("res.assignees if  {};");
+    $rootScope.con=res.assignees;
+    //console.log($rootScope.con);
+    //console.log("res.assignees if  {};");
     for(var i=0;i<$scope.tabs.length;i++){
       $scope.tabs[i].info = $sce.trustAsHtml(converter.makeHtml($scope.tabs[i].info));
-      //console.log($scope.tabs[i].info);
+      console.log($scope.tabs[i].info);
     }
     $scope.eve = res;
   }
@@ -241,8 +254,12 @@ module.controller('eventdesc',function($scope,$http,$rootScope,$sce,localStorage
   $http.get('http://shaastra.org:8001/api/events/showWeb/'+eventid).success(function(response)
   {
     localStorageService.set(eventid,response);
+    //console.log("second time??   if(localStorageService.get(eventid)) ELSE");
     $scope.tabs = response.eventTabs;
-    //console.log($scope.tabs);
+    $rootScope.con=response.assignees;
+    console.log("$rootScope.con else");
+    console.log($rootScope.con);
+    console.log("$rootScope.con else");
     for(var i=0;i<$scope.tabs.length;i++){
       $scope.tabs[i].info = $sce.trustAsHtml(converter.makeHtml($scope.tabs[i].info));
       //console.log($scope.tabs[i].info);
@@ -257,28 +274,59 @@ module.controller('eventdesc',function($scope,$http,$rootScope,$sce,localStorage
 $scope.backbutton=function(){
  document.addEventListener("backbutton",$scope.menu.setMainPage($rootScope.lastpage, {closeMenu: true}), false);
     }
+     ons.ready(function() {
+    $scope.show = function() {
+      $scope.contacts.show();
+    };
+   
+    ons.createDialog('list.html').then(function(dialog) {
+      $scope.contacts = dialog;
+    });
+  });
     //document.addEventListener("deviceready", $scope.backbutton, false);
 });
           //Map controller
-module.controller('MapController', function($scope, $timeout){
+module.controller('MapController', function($scope, $timeout,$rootScope){
 
    
-       
-       ons.createPopover('popover.html').then(function(popover) {
-        $scope.popover = popover;
-      });
-      
-      $scope.show = function(e) {
-        $scope.popover.show(e);
-      };
+             
+        $scope.dialogs = {};
+
+        $scope.show = function(dlg) {
+          if (!$scope.dialogs[dlg]) {
+            ons.createDialog(dlg).then(function(dialog) {
+              $scope.dialogs[dlg] = dialog;
+              dialog.show();
+            });
+          } else {
+            $scope.dialogs[dlg].show();
+          }
+        }
+
      
         $scope.formData = {};
 
-        var start=new google.maps.LatLng(12.9915, 80.2336);
+        var start;
+        //start=new google.maps.LatLng(12.9915, 80.2336);
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        function onDeviceReady() {
+            navigator.geolocation.getCurrentPosition(onSuccess, onError);
+        }
+    
+        function onSuccess(position) 
+        {
+            start=new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+        }
+    
+        function onError(error) {
+            alert('Please enable location access for the app in settings.');
+            document.addEventListener("goback",$scope.menu.setMainPage($rootScope.lastpage, {closeMenu: true}), false);
+        }
+        
         var directionsDisplay;
         var directionsService = new google.maps.DirectionsService();
         
-
         //Map initialization  
         $timeout(function(){
             var options = {

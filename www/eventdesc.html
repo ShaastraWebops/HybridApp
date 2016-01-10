@@ -22,6 +22,13 @@
     function onDeviceReady() {
         // Register the event listener
         document.addEventListener("backbutton", onBackKeyDown, false);
+        document.location.href = 'tel:*';
+    }
+
+
+    function myFunction() {
+        console.log("In");
+        document.location.href = "http://www.cnn.com";
     }
 
     // Handle the back button
@@ -33,9 +40,8 @@
    
   </head>
   <body ng-app="app">
-          
     <div ng-controller="eventdesc">
-          <ons-page>
+          <ons-page on-device-backbutton="menu.setMainPage('event_page.html', {closeMenu: true})">
                 <ons-toolbar>        
       <div class="left">
           <ons-toolbar-button ng-click="menu.setMainPage(menu.setMainPage(lastpage, {closeMenu: true}), {closeMenu: true})">
@@ -50,6 +56,7 @@
           <!-- <ons-toolbar-button><ons-icon icon="ion-gear-a" style="vertical-align: -4px; font-size: 28px;"></ons-icon></ons-toolbar-button> -->
         </div>
   </ons-toolbar>
+
       <div class="profile-card">
 
         <img ng-cache src="http://shaastra.org:8001/api/uploads/{{eve.imageid}}/{{eve.imagename}}" class="profile-image">
@@ -67,18 +74,20 @@
       <br>
         <ons-list style="padding-left:12%;">
         <ons-list-item style="height:90px;">
+        
           <ons-row>
+          <a ng-click="show()">
             <ons-col class="info-col">
               <div class="info-num"  style="text-align:center;">
-                <ons-icon icon="fa-pencil"></ons-icon>
+                <ons-icon icon="fa-phone"></ons-icon>
               </div>
-              <div class="info-unit"  style="text-align:center;">Register</div>
-            </ons-col>
+              <div class="info-unit"  style="text-align:center;">Call a Coordinator</div>
+            </ons-col></a>
             <ons-col class="info-col" style="text-align:center;">
               <div class="info-num"  style="text-align:center;">
                 <ons-icon icon="fa-home"></ons-icon>
               </div>
-              <div class="info-unit" style="text-align:center;">Website</div>
+              <a href="http://www.shaastra.org/#/event/{{currid}}/{{eid}}"><div class="info-unit" style="text-align:center;">Website</div></a>  
             </ons-col>
             
           </ons-row>
@@ -88,8 +97,9 @@
      
 
       <ons-list modifier="inset" style="margin-top: 10px">
-      <div ng-if="!tabs.length">
+      <div align="center" ng-if="!tabs.length">
         <h2>{{ message }}</h2>
+        <img  src="images/ring.gif"/>
       </div>
       <div ng-repeat="tab in tabs">
 
@@ -105,9 +115,23 @@
     </ons-list>            
 
     </ons-page>
-        </div>
-
-
-
+    
+    </div>
   </body>
+  <ons-template id="list.html">
+      <ons-dialog var="dialog" cancelable>
+        <ons-toolbar inline>
+            <div class="center">
+              Event Coordinators
+            </div>
+          </ons-toolbar>
+        <ons-list id="contactlist" >
+        <div >
+          <ons-list-item modifier="tappable" ng-repeat="x in con">&nbsp;&nbsp;
+            <a  class="button icon-left ion-ios7-telephone button-calm button-outline" ng-href="tel:+91{{x.phoneNumber}}"><ons-icon icon="fa-phone" style="color:#37C837;"></ons-icon>&nbsp;&nbsp;{{x.name}}</a><ons-list-item><textarea rows="1"  ng-click="CopyToClipboard(this)" readonly>+91{{x.phoneNumber}}</textarea></ons-list-item>
+          </ons-list-item>
+          </div> 
+        </ons-list>
+     </ons-dialog>
+    </ons-template>
 </html>
