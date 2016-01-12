@@ -39,6 +39,24 @@
       
     }
     
+    .page__content::-webkit-scrollbar,
+    ::-webkit-scrollbar {
+      display: block;
+      background-color: white;
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      background: #666;
+      border: 1px solid white;
+    }
+    
+    .page__content
+    {
+        overflow-x: hidden;
+    }
     
 </style>
 
@@ -62,9 +80,9 @@
  <div class="profile-card">
     
       
-    <img src="images/bottom.png" class="event-image" style="z-index:1;height:84%;"  id="bottom"/>
-    <img src="images/mid.png" class="event-image" style="z-index:2;height:84%;"  id="mid" />
-    <img src="images/top.png" class="event-image" style="z-index:3;height:84%;"  id="top" /> 
+    <img src="images/bottom.png" class="event-image" style="z-index:1;height:70%;"  id="bottom"/>
+    <img src="images/mid.png" class="event-image" style="z-index:2;height:70%;"  id="mid" />
+    <img src="images/top.png" class="event-image" style="z-index:3;height:70%;"  id="top" /> 
 
 
 </div>
