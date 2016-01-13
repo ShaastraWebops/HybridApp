@@ -138,6 +138,7 @@
     </div>   
     <div class="right">
           <!-- <ons-toolbar-button><ons-icon icon="ion-gear-a" style="vertical-align: -4px; font-size: 28px;"></ons-icon></ons-toolbar-button> -->
+          <a href="http://shaastra.org/"><ons-button modifier="small--cta">  Web</a> </ons-button>
         </div>
   </ons-toolbar>
 
@@ -164,7 +165,9 @@ Welcome to the IIT Madras Maker Summit 2016! The 4 day extravaganza from 23rd to
         </ons-list-item>
         
         <ons-list-item class="item-accordion" ng-repeat="item in group.items" ng-show="isGroupShown(group)">
-          <div ng-bind-html="renderHtml(item)" style="margin-top:10px;margin-bottom:10px;font-size: 14px;"></div>
+    
+          <div ng-bind-html="renderHtml(item)" style="margin-top:10px;margin-bottom:10px;font-size: 14px;">
+          </div>
         </ons-list-item>
       </div>
     </ons-list>

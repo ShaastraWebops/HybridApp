@@ -52,8 +52,9 @@
       <div ng-hide="online"><h3 style="color:red">You're offline</h3></div>
       <!-- <center>{{currname}}</center> -->
     </div>   
-    <div class="right">
+ <div class="right">
           <!-- <ons-toolbar-button><ons-icon icon="ion-gear-a" style="vertical-align: -4px; font-size: 28px;"></ons-icon></ons-toolbar-button> -->
+          <a href="http://shaastra.org/"><ons-button modifier="small--cta"> Web</a> </ons-button>
         </div>
   </ons-toolbar>
 
@@ -127,8 +128,9 @@
           </ons-toolbar>
         <ons-list id="contactlist" >
         <div >
-          <ons-list-item modifier="tappable" ng-repeat="x in con">&nbsp;&nbsp;
-            <a  class="button icon-left ion-ios7-telephone button-calm button-outline" ng-href="tel:+91{{x.phoneNumber}}"><ons-icon icon="fa-phone" style="color:#37C837;"></ons-icon>&nbsp;&nbsp;{{x.name}}</a><ons-list-item><textarea rows="1"  ng-click="CopyToClipboard(this)" readonly>+91{{x.phoneNumber}}</textarea></ons-list-item>
+          <ons-list-item modifier="tappable" ng-repeat="x in con">
+           <ons-icon icon="fa-phone" style="color:#37C837;"></ons-icon>{{x.name}}<textarea class="textarea" rows = "1"  ng-click="CopyToClipboard(this)" readonly>0{{x.phoneNumber}}</textarea>
+       
           </ons-list-item>
           </div> 
         </ons-list>
