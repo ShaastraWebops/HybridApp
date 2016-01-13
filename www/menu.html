@@ -1,5 +1,6 @@
-<ons-page style="background-color: white;font-variant: small-caps;">
 
+<ons-page ng-controller="events" style="background-color: white;font-variant: small-caps;">
+   
         <ons-list>
             
             <ons-list-item style="text-align: center;">
@@ -40,6 +41,14 @@
             <ons-list-item
                 modifier="tappable" class="list__item__line-height"
                 style="font-variant: small-caps;"
+                ng-click="info('561567aac8d15f6e1252ebee')">
+                <i class="fa fa-arrow-right" style="color: #666"></i>
+                &nbsp; Workshops
+            </ons-list-item>
+            
+            <ons-list-item
+                modifier="tappable" class="list__item__line-height"
+                style="font-variant: small-caps;"
                 onclick="menu.setMainPage('maker_summit.html', {closeMenu: true})">
                 <i class="fa fa-arrow-right" style="color: #666"></i>
                 &nbsp; Maker Summit
@@ -75,6 +84,4 @@
             
         </ons-list>
 
-        
-    
     </ons-page>
