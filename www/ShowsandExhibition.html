@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
     <link rel="stylesheet" href="../onsen-css-components-blue-basic-theme.css">
     <link rel="stylesheet" href="list_thumbnails.css">
+    <link rel="stylesheet" href="styles/shows-and-exhibitions.css">
 
     <script src="lib/onsen/js/angular/angular.js"></script>
     <script src="lib/onsen/js/onsenui.js"></script>
@@ -18,16 +19,131 @@
   <body ng-app="app">
     <ons-page on-device-backbutton="menu.setMainPage('home.html', {closeMenu: true})">
    <div>
-          <ons-page>
-                <ons-toolbar>        
+          <ons-page ng-controller="TabCtrl">
+
+  <ons-tabbar>
+  
+  <ons-tab page="Exhibitions.html" label="Shows & Exhibits" active="true" ></ons-tab>
+  <ons-tab page="Past.html" label="Past Perfomances" ></ons-tab>
+
+
+</ons-tabbar>
+
+<ons-template id="Exhibitions.html">
+  <ons-toolbar>
+  <div class="left">
+          <ons-toolbar-button ng-click="menu.toggle()">
+            <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+    <div class="center">Shows & Exhibitions</div>
+  </ons-toolbar>
+ 
+  
+                    
+                    Shows at Shaastra have been an unmatchable mix of technology and entertainment with past performances displaying splendid air show, laser show etc. This year Shaastra goes big bringing world renowned international artists and highly decorated national artist to perform at its stage to mesmerise an audience of over 5000 filling them with the much required adrenaline. After the sun sets, be ready to groove with the tunes spread over these fine entertainers.
+    <br>
+
+
+<div class="button-bar" style="width:240px;margin:0 auto;">
+  <div class="button-bar__item">
+    <button class="button-bar__button" ng-click="changeSubId(1)" ng-class="{'sub-tab-selected':(subId === 1)}" data-toggle="tab">Light and Sand art</button>
+  </div>
+</div>
+
+<div class="button-bar" style="width:240px;margin:0 auto;">
+  <div class="button-bar__item">
+    <button class="button-bar__button" tyle="height:140px;" ng-click="changeSubId(2)" ng-class="{'sub-tab-selected':(subId === 2)}" data-toggle="tab">Extreme sports shows</button>
+  </div>
+
+</div>
+
+<div class="button-bar" style="width:240px;margin:0 auto;">
+  <div class="button-bar__item">
+    <button class="button-bar__button" ng-click="changeSubId(3)" ng-class="{'sub-tab-selected':(subId === 3)}" data-toggle="tab">LED and Neon Show</button>
+  </div>
+   </div>
+
+<div class="button-bar" style="width:240px;margin:0 auto;">
+  <div class="button-bar__item">
+    <button class="button-bar__button" ng-click="changeSubId(4)" ng-class="{'sub-tab-selected':(subId === 4)}"  data-toggle="tab">Envisage</button>
+  </div>
+</div>
+               <div class="profile-card">
+                  <div class="profile-desc">
+                    
+                    <br>
+                    <div ng-if="subId===1" class="cont">
+                    <div class="profile-desc">
+                      <h2><b>Light and Sand art</b></h2>
+                    </div>
+                     <div class="profile-desc">
+                      Experience  India's best sand artist and India's only light painter Vivek patil who rose to fame by performamces in National Television shows <b>"Entertainment Ke Liye Kuchh Bhi Karega"</b> and <b>"India's Got Talent"</b>. His display of immense talent and artistic flamboyance have awed millions in the world. The jaw dropping visuals paralleled with the emotional connect have touched the hearts of many and at Shaastra 2016 he is coming to fill your life with color. Be sure to catch him only at Shaastra 2016.
+                     </div><br>
+                     <div class="profile-card">
+                      
+                        <iframe width="100%" frameborder="0" 
+                          src="http://www.youtube.com/embed/xdtUKUjXGUM">
+                        </iframe>
+                      
+                     </div>
+                    </div>
+                    <div ng-if="subId===2" class="cont">
+                      <div class="profile-desc">
+                        <h2><b>Extreme sports Show</b></h2>
+                      </div>
+                      <div class="profile-desc">
+                       Bikes, stunts, adventure does this things ring a bell with you? If Yes, Shaastra is here with another international addition world renowned stunt biker Yohan Triboulat. Hailing from France he has made his name by performing in stunt shows all around the globe for over 10 years. So get ready for a jaw dropping performance as Yohan and his bike swing at our custom made set and jump to the beat.
+                     </div>
+                    </div>
+                    <div ng-if="subId===3" class="cont">
+                      <div class="profile-desc">
+                        <h2><b>LED and Neon Show</b></h2>
+                      </div>
+                      <div class="profile-desc">
+                       This year Shaastra brings some international flavour with Ukraine's finest entertainers Adelaida bringing one of the world's best LED and Neon shows. Having produced over 1000 performances across the globe at the world's most lavish locations, they are coming to Shaastra just for you. Their zealous show is bound to get you pumping and jumping and raise your energy level over 9000!! Catch them live at Shaastra 2016.
+                     </div>
+                    </div>
+                    <div ng-if="subId===4" class="cont">
+                      <div class="profile-desc">
+                        <h2><b>Envisage</b></h2>
+                      </div>
+                      <div class="profile-desc">
+                       A novel techno cultural show specializing in designing your dreams in the field of science and technology, Envisage is a technical marvel as the fusion of art and technology pleasures your visual senses and overwhelms you with audio effects. It is going to be an exciting and exhilarating experience. Feast your eyes and ears on the enticing projects coming together as a show completely run by students of IIT Madras. From basic elements such as LEDs to the futuristic devices such as Kinect, Envisage showcases unique way to blend science and entertainment.
+                     </div>
+                     <div class="profile-desc">
+                      Join us at Shaastra 2016 for this event and get ready to be amazed!
+                     </div>
+                     <div class="profile-card">
+                      
+                        <iframe width="100%"  frameborder="0" 
+                          src="http://www.youtube.com/embed/W0ZFnLjkJ0c">
+                        </iframe>
+                      
+                     </div>
+                    </div>
+                  </div>
+
+ 
+</ons-template>
+
+<ons-template id="s.html">
+  <ons-toolbar>
+    <div class="center">Shows</div>
+  </ons-toolbar>
+   <p style="padding-top: 100px; color: #999; text-align: center">Page Contents</p>
+</ons-template>
+
+<ons-template id="Past.html">
+    <ons-toolbar>        
       <div class="left">
           <ons-toolbar-button ng-click="menu.toggle()">
             <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
           </ons-toolbar-button>
         </div>
      <div class="center" >
-      Shows and Exhibition
-      <div ng-hide="online"><h3 style="color:red">You're offline</h3></div>
+      Past Perfomances
+      <div ng-hide="online"><h3 style="color:red"></h3></div>
       <!-- <center>{{currname}}</center> -->
     </div>   
     <div class="right">
@@ -35,7 +151,7 @@
         </div>
   </ons-toolbar>
 
-      <ons-list>
+  <ons-list>
 
         <ons-list-item modifier="chevron" class="list-item-container" onclick="menu.setMainPage('envisage.html', {closeMenu: true})">
           <ons-row style="padding:10px;">
@@ -85,8 +201,7 @@
         </ons-list-item>
 
         <ons-list-item modifier="chevron" class="list-item-container" onclick="menu.setMainPage('Exhibits.html', {closeMenu: true})">
-          <ons-row style="padding:10px;">
-            
+          <ons-row style="padding:10px;">            
             <ons-col>
               <div class="name">
                 Exhibits
@@ -100,10 +215,12 @@
           </ons-row>
         </ons-list-item>
       </ons-list>
+</ons-template>
+
+
 
     </ons-page>
 
 
   </body>
 </html>
-``

@@ -99,6 +99,13 @@ module.controller('signupcontroller',function($scope, $http,localStorageService)
        });
     });
 
+module.controller('TabCtrl',function($scope, $http,localStorageService){
+   $scope.subId = 1;
+
+   $scope.changeSubId = function (id) {
+      $scope.subId = id;
+    };
+    });
 
 module.controller('eventlist',function($scope, $http,$rootScope,localStorageService)
 {
@@ -106,6 +113,7 @@ module.controller('eventlist',function($scope, $http,$rootScope,localStorageServ
   var imgid,imgname,img;
   $rootScope.lastpage = 'eventcat.html';
   console.log(currid);
+ 
   if(localStorageService.get(currid))
   {
     console.log('stored');
