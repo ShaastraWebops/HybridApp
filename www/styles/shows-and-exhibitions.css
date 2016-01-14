@@ -1,23 +1,23 @@
 /* Editing default bootstrap classes. BEWARE!!*/
 .nav > li > a:hover {
-	color: #a3a3a3;
-	background-color: #173e43;
+  color: #a3a3a3;
+  background-color: #173e43;
 }
 
 
 .sub-tab-selected {
-	
-	background-color: blue;
+  
+  background-color: blue;
 }
 
 .shows-maker-subHeading {
-	font-family: 'Feather';
-	text-align: center;
-	font-weight: bolder;
-	font-variant: small-caps;
+  font-family: 'Feather';
+  text-align: center;
+  font-weight: bolder;
+  font-variant: small-caps;
 }
 .shows-maker-subHeading h2 {
-	font-size: 2em;
+  font-size: 2em;
 }
 
 .button-bar {
@@ -94,12 +94,12 @@
   font-size: 17px;
   -webkit-border-radius: inherit;
   border-radius: inherit;
-  background-color: transparent;
-  color: rgba(18,114,224,0.77);
-  border: 0px solid rgba(18,114,224,0.77);
-  border-top: 1px solid rgba(18,114,224,0.77);
-  border-bottom: 1px solid rgba(18,114,224,0.77);
-  border-right: 1px solid rgba(18,114,224,0.77);
+  background-color: rgb(23, 62, 67);
+  color: #fff;
+  border: 0px solid rgb(23, 62, 67);
+  border-top: 1px solid rgb(23, 62, 67);
+  border-bottom: 1px solid rgb(23, 62, 67);
+  border-right: 1px solid rgb(23, 62, 67);
   font-weight: 400;
   padding: 0 8px;
   height: 27px;
@@ -116,7 +116,7 @@
 }
 .button-bar__button:active,
 :active + .button-bar__button {
-  background-color: rgba(18, 114, 224, 0.2);
+  background-color: #fff;
   border: 0px solid rgba(18,114,224,0.77);
   border-top: 1px solid rgba(18,114,224,0.77);
   border-bottom: 1px solid rgba(18,114,224,0.77);
@@ -132,7 +132,7 @@
 }
 .button-bar__item.active > .button-bar__button,
 :checked + .button-bar__button {
-  background-color: rgba(18,114,224,0.77);
+  background-color: #fff;
   color: #fff;
   -webkit-transition: none;
   -moz-transition: none;
