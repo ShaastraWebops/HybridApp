@@ -113,6 +113,23 @@ module.controller('eventlist',function($scope, $http,$rootScope,localStorageServ
   var imgid,imgname,img;
   $rootScope.lastpage = 'eventcat.html';
   console.log(currid);
+  if (currid == '561567aac8d15f6e1252ebee'){
+             console.log("scf");
+            $http.get('http://shaastra.org:8001/api/eventLists/workshops/'+currid).success(function(response) 
+            {
+                 $scope.currinfo=response.info;
+                 $scope.currname=response.title;
+                 //console.log($scope.currinfo);
+                 imgid=response.imageid;
+                 imgname=response.imagename;
+                 $scope.currimage= "http://shaastra.org:8001/api/uploads/"+imgid+"/"+imgname;
+                 $scope.events=response.events;
+                 console.log($scope.events);
+                 $scope.message = 'Loading...';
+                 localStorageService.set(currid,response);
+                 //console.log(JSON.stringify(response));
+            })
+  }
  
   if(localStorageService.get(currid))
   {
