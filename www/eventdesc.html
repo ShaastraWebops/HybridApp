@@ -129,8 +129,8 @@
         <ons-list id="contactlist" >
         <div >
           <ons-list-item modifier="tappable" ng-repeat="x in con">
-           <ons-icon icon="fa-phone" style="color:#37C837;"></ons-icon>{{x.name}}<textarea class="textarea" rows = "1"  ng-click="CopyToClipboard(this)" readonly>0{{x.phoneNumber}}</textarea>
-       
+           <ons-icon icon="fa-phone" style="color:#37C837;"></ons-icon>{{x.name}}<ons-list-item><textarea class="textarea" rows = "1"  ng-click="CopyToClipboard(this)" readonly>0{{x.phoneNumber}}</textarea>
+          </ons-list-item>
           </ons-list-item>
           </div> 
         </ons-list>
