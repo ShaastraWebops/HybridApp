@@ -61,5 +61,9 @@
             "PACKAGE_NAME": "com.example.helloworld"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "android.support.v4": {
+            "PACKAGE_NAME": "com.example.helloworld"
+        }
+    }
 }

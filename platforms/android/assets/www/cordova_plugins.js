@@ -20,7 +20,8 @@ module.exports.metadata =
 {
     "cordova-plugin-customurlscheme": "4.0.0",
     "cordova-plugin-geolocation": "1.0.1",
-    "mx.ferreyra.callnumber": "0.0.2"
+    "mx.ferreyra.callnumber": "0.0.2",
+    "android.support.v4": "21.0.1"
 }
 // BOTTOM OF METADATA
 });
