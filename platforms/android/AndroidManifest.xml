@@ -2,7 +2,6 @@
 <manifest android:hardwareAccelerated="true" android:versionCode="" android:versionName="1.0.0" android:windowSoftInputMode="adjustPan" package="com.example.helloworld" xmlns:android="http://schemas.android.com/apk/res/android">
     <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true" android:xlargeScreens="true" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -35,7 +34,6 @@
         <service android:name="com.pushbots.push.GCMIntentService" />
     </application>
     <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="19" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />

@@ -20,6 +20,11 @@ module.exports = [
         "clobbers": [
             "PushbotsPlugin"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-whitelist/whitelist.js",
+        "id": "cordova-plugin-whitelist.whitelist",
+        "runs": true
     }
 ];
 module.exports.metadata = 
@@ -29,6 +34,7 @@ module.exports.metadata =
     "cordova-plugin-geolocation": "1.0.1",
     "mx.ferreyra.callnumber": "0.0.2",
     "pushbots-cordova-plugin": "1.3.0",
+    "cordova-plugin-whitelist": "1.2.0",
     "android.support.v4": "21.0.1"
 }
 // BOTTOM OF METADATA

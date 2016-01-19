@@ -43,18 +43,13 @@
   
 </head>
 <script>
-ons.ready(function() {
 
-    console.log("Menu page is going to open");
+function onDeviceReady () {
+    //alert ('Cordova is ready!');
+    console.log("onDeviceReady");
     var Pushbots = PushbotsPlugin.initialize("569a54d3177959db498b4567", {"android":{"sender_id":"36783241052"}});
-  });
 
-//document.addEventListener('deviceready', function () {
-//var Pushbots = PushbotsPlugin.initialize("569a54d3177959db498b4567", //{"android":{"sender_id":"36783241052"}});
-//}, false);
-
-// Should be called once app receive the notification
-Pushbots.on("notification:received", function(data){
+    Pushbots.on("notification:received", function(data){
   console.log("received:" + JSON.stringify(data));
 });
 
@@ -72,6 +67,15 @@ Pushbots.on("registered", function(token){
 Pushbots.getRegistrationId(function(token){
     console.log("Registration Id:" + token);
 });
+        }
+
+
+//document.addEventListener('deviceready', function () {
+//var Pushbots = PushbotsPlugin.initialize("569a54d3177959db498b4567", //{"android":{"sender_id":"36783241052"}});
+//}, false);
+
+// Should be called once app receive the notification
+
 
 </script>
 <body> 
