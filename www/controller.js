@@ -178,7 +178,13 @@ module.controller('eventlist',function($scope, $http,$rootScope,localStorageServ
     imgid = res.imageid;
     imgname = res.imgname;
     $scope.currimage= "http://shaastra.org:8001/api/uploads/"+imgid+"/"+imgname;
-    $scope.events=res.events;
+    events=res.events;
+    events.sort(function(a,b){
+       var alc = a.name.toLowerCase(), blc = b.name.toLowerCase();
+        return alc > blc ? 1 : alc < blc ? -1 : 0;
+      });
+    $scope.events=events;
+
   }
   else
   {
@@ -192,6 +198,7 @@ module.controller('eventlist',function($scope, $http,$rootScope,localStorageServ
        imgname=response.imagename;
        $scope.currimage= "http://shaastra.org:8001/api/uploads/"+imgid+"/"+imgname;
        events = response.events;
+       console.log("sort");
        events.sort(function(a,b){
        var alc = a.name.toLowerCase(), blc = b.name.toLowerCase();
         return alc > blc ? 1 : alc < blc ? -1 : 0;

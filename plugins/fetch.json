@@ -47,6 +47,14 @@
             "type": "registry",
             "id": "cordova-plugin-android-support-v4"
         },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "pushbots-cordova-plugin": {
+        "source": {
+            "type": "registry",
+            "id": "pushbots-cordova-plugin"
+        },
         "is_top_level": true,
         "variables": {}
     }
