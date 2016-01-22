@@ -43,7 +43,7 @@
           </ons-toolbar-button>
         </div>
      <div class="center" > 
-     SHAASTRA 2016 SPONSORS 
+      SPONSORS 
       <div ng-hide="online"><h3 style="color:red"></h3></div>
       <!-- <center>{{currname}}</center> -->
     </div>   
@@ -52,36 +52,49 @@
           <a href="http://shaastra.org/"><ons-button modifier="small--cta"><i class="fa fa-external-link"></i>  Web</a> </ons-button>
         </div>
   </ons-toolbar>
-<ons-page ng-controller="eventdesc">
 
-<ons-list>
-<ons-list-item modifier="tappable">
-<ons-icon icon="fa-phone" style="color:#37C837;">Bhavik Rasyara</ons-icon>
-<ons-list-item>
-<textarea class="textarea" rows = "1"  ng-click="CopyToClipboard(this)" readonly>08939317150</textarea>
-<a target="_blank" href="mailto:bhavik@shaastra.org">bhavik@shaastra.org</a>
-</ons-list-item>
-</ons-list-item>
 
-<ons-list-item modifier="tappable">
-<ons-icon icon="fa-phone" style="color:#37C837;">Shashanka Rao</ons-icon>
+<ons-button modifier="small--cta" ng-click ="show('sponc.html')" modifier="tappable">
+  Contact Us
+   </ons-button>
 
-<ons-list-item>
-<textarea class="textarea" rows = "1"  ng-click="CopyToClipboard(this)" readonly>09498098063</textarea>
-<a target="_blank" href="mailto:bhavik@shaastra.org">shashanka@shaastra.org</a>
-</ons-list-item>
-</ons-list-item>
+   <ons-template id="sponc.html">
+      <ons-dialog var="dialog" cancelable>
+       
+        <ons-list>
+        <div style = "font-family: 'Helvetica';font-size: 14px;float:center; padding: 0px 0;"> 
+    
+          <ons-list-item modifier="tappable">
+          <ons-icon icon="fa-phone fa-2x" style="color:#37C837;font-size: 17px">Bhavik Rasyara</ons-icon>
+          <ons-list-item>
+          <textarea class="textarea" rows = "1"  ng-click="CopyToClipboard(this)" readonly>08939317150</textarea>
+          <a target="_blank" href="mailto:bhavik@shaastra.org">bhavik@shaastra.org</a>
+          </ons-list-item>
+          </ons-list-item>
 
-<ons-list-item modifier="tappable">
-<ons-icon icon="fa-phone" style="color:#37C837;">Mahesh Kurup</ons-icon>
-<ons-list-item>
-<textarea class="textarea" rows = "1"  ng-click="CopyToClipboard(this)" readonly>09444443592</textarea>
-<a target="_blank" href="mailto:bhavik@shaastra.org">kurup@shaastra.org</a>
-</ons-list-item>
-</ons-list-item>
+          <ons-list-item modifier="tappable">
+          <ons-icon icon="fa-phone fa-2x" style="color:#37C837;font-size: 17px">Shashanka Rao</ons-icon>
 
+          <ons-list-item>
+          <textarea class="textarea" rows = "1"  ng-click="CopyToClipboard(this)" readonly>09498098063</textarea>
+          <a target="_blank" href="mailto:bhavik@shaastra.org">shashanka@shaastra.org</a>
+          </ons-list-item>
+          </ons-list-item>
+
+          <ons-list-item modifier="tappable">
+          <ons-icon icon="fa-phone fa-2x" style="color:#37C837;font-size: 17px">Mahesh Kurup</ons-icon>
+          <ons-list-item>
+          <textarea class="textarea" rows = "1"  ng-click="CopyToClipboard(this)" readonly>09444443592</textarea>
+          <a target="_blank" href="mailto:bhavik@shaastra.org">kurup@shaastra.org</a>
+          </ons-list-item>
+          </ons-list-item>
+   </div>
 
 </ons-list>
+     </ons-dialog>
+    </ons-template>
+
+
 
     
 

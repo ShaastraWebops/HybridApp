@@ -274,6 +274,22 @@ module.controller('events',function($scope, $http,$rootScope,localStorageService
 
 module.controller('eventdesc',function($scope,$http,$rootScope,$sce,localStorageService)
 {
+
+    $scope.dialogs = {};
+
+        $scope.show = function(dlg) {
+          if (!$scope.dialogs[dlg]) {
+            ons.createDialog(dlg).then(function(dialog) {
+              $scope.dialogs[dlg] = dialog;
+              dialog.show();
+            });
+          } else {
+            $scope.dialogs[dlg].show();
+          }
+        }
+
+     
+        $scope.formData = {};
   converter = new showdown.Converter();
   $rootScope.lastpage = 'event_page.html';
   $scope.toggleGroup = function(group) {
