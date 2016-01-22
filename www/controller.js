@@ -362,6 +362,24 @@ $scope.backbutton=function(){
     //document.addEventListener("deviceready", $scope.backbutton, false);
 });
           //Map controller
+
+
+module.controller('lecture', function($scope, $timeout,$rootScope){
+
+        $scope.dialogs = {};
+
+        $scope.show = function(dlg) {
+          if (!$scope.dialogs[dlg]) {
+            ons.createDialog(dlg).then(function(dialog) {
+              $scope.dialogs[dlg] = dialog;
+              dialog.show();
+            });
+          } else {
+            $scope.dialogs[dlg].show();
+          }
+        }
+
+});
 module.controller('MapController', function($scope, $timeout,$rootScope){
 
    

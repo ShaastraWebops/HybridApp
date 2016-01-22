@@ -43,11 +43,18 @@
   
 </head>
 <script>
+/*
+
+
+document.addEventListener ("deviceready", onDeviceReady, false);
 
 function onDeviceReady () {
     //alert ('Cordova is ready!');
     console.log("onDeviceReady");
     var Pushbots = PushbotsPlugin.initialize("569a54d3177959db498b4567", {"android":{"sender_id":"36783241052"}});
+    console.log(Pushbots);
+        console.log("");
+
 
     Pushbots.on("notification:received", function(data){
   console.log("received:" + JSON.stringify(data));
@@ -69,7 +76,7 @@ Pushbots.getRegistrationId(function(token){
 });
         }
 
-
+*/
 //document.addEventListener('deviceready', function () {
 //var Pushbots = PushbotsPlugin.initialize("569a54d3177959db498b4567", //{"android":{"sender_id":"36783241052"}});
 //}, false);

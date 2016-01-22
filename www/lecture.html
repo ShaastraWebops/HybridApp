@@ -1,0 +1,348 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="controller.js"></script>
+    <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+    <link rel="stylesheet" href="../onsen-css-components-blue-basic-theme.css">
+    <link rel="stylesheet" href="profile.css">
+
+    <script src="lib/onsen/js/angular/angular.js"></script>
+    <script src="lib/onsen/js/onsenui.js"></script>
+    <script>
+      ons.bootstrap();
+      //modal.open();
+                  // Wait for device API libraries to load
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        // Register the event listener
+        document.addEventListener("backbutton", onBackKeyDown, false);
+    }
+
+    // Handle the back button
+    //
+    function onBackKeyDown() {
+        document.addEventListener("backbutton",$scope.menu.setMainPage($rootScope.lastpage, {closeMenu: true}), false);
+    }
+    </script>
+
+  </head>
+  <body  ng-app="app">
+    <style>
+
+.list__item {
+  min-height: 0px;
+}
+
+.item-accordion {
+  line-height: 34px;
+  padding-top: 0;
+  padding-bottom: 0;
+  text-align: left;
+  transition: 0.07s all linear;
+  padding-right: 5px;
+}
+
+.item-accordion.ng-hide {
+  line-height: 0px;
+}
+
+.item-accordion.ng-hide-add,
+.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+
+.title {
+  background: #F5F5F5;
+}
+
+.active {
+  background: #EFEFEF;
+}
+
+.profile-card {
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding: 30px 0;
+  line-height: 1.4;
+  background-color: #33393c;
+  text-shadow: rgba(0, 0, 0, 0.4) 0px 1px 0px;
+}
+
+.profile-image {
+  width: 100%;
+  background-color: black;
+  border 1px solid white;
+  box-shadow:rgba(0, 0, 0, 0.2) 0px 2px 0px 0px;
+  -webkit-box-shadow:rgba(0, 0, 0, 0.2) 0px 2px 0px 0px;
+}
+
+.profile-name {
+  margin: 20px 0 0 0;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.profile-id {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.profile-desc {
+  font-size: 15px;
+  opacity: 0.6;
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.info-col {
+  height: 60px;
+  line-height: 1;
+  padding: 12px 0 12px 4px;
+}
+
+.info-num {
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.info-unit {
+  margin-top: 6px;
+  font-size: 14px;
+  opacity: 0.4;
+}
+
+.list-item-container {
+  line-height: 1;
+  padding: 15px 0px 15px 15px;
+  border-radius: 10px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+
+.name {
+  font-weight: 500;
+  line-height: 16px;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.location {
+  font-size: 14px;
+  opacity: 0.4;
+  margin-bottom: 6px;
+}
+
+.desc {
+  line-height: 1.2;
+  font-size: 13px;
+}
+
+    </style>
+
+    <ons-page ng-controller="lecture" on-device-backbutton="menu.setMainPage('home.html', {closeMenu: true})">
+      <ons-toolbar>        
+      <div class="left">
+          <ons-toolbar-button ng-click="menu.toggle()">
+            <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+     <div class="center" > 
+     LECTURE SERIES 
+      <div ng-hide="online"><h3 style="color:red"></h3></div>
+      <!-- <center>{{currname}}</center> -->
+    </div>   
+    <div class="right">
+          <!-- <ons-toolbar-button><ons-icon icon="ion-gear-a" style="vertical-align: -4px; font-size: 28px;"></ons-icon></ons-toolbar-button> -->
+          <a href="http://shaastra.org/"><ons-button modifier="small--cta"><i class="fa fa-external-link"></i>  Web</a> </ons-button>
+        </div>
+  </ons-toolbar>
+
+      <div class="profile-card">
+
+        <img src="images/lecture.jpg" class="profile-image">
+        <br><br>
+        <div class="profile-desc">Presented By:
+ <img src="images/visa.png" width = "70"> </div>
+
+      </div>
+
+      
+         
+      
+
+      <br>
+<ons-list>
+
+        <ons-list-item modifier="chevron" class="list-item-container" ng-click ="show('dialog1.html')">
+          <ons-row>&nbsp;
+            <ons-col width="100px">
+              <img src="images/Lulla.png" width = "90">
+            </ons-col>
+            <ons-col>
+              <div class="name">
+                DR. KAMLESH LULLA
+              </div>
+              <div class="location">
+                 Chief Scientist
+              </div>
+              <div class="desc">
+                Nasa Astronaut Training Program
+              </div>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+        </ons-list-item>
+
+        <ons-list-item modifier="chevron" class="list-item-container" ng-click ="show('dialog2.html')">
+          <ons-row>&nbsp;
+            <ons-col width="100px">
+              <img src="images/uday.png" width = "90">
+            </ons-col>
+            <ons-col>
+              <div class="name">
+                DR. UDAYAKUMAR
+              </div>
+              <div class="location">
+                 Designer of
+              </div>
+              <div class="desc">
+                Indian Rupee Symbol
+              </div>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+        </ons-list-item>
+
+         <ons-list-item modifier="chevron" class="list-item-container" ng-click ="show('dialog3.html')">
+          <ons-row>&nbsp;
+            <ons-col width="100px">
+              <img src="images/Bali.png" width = "90">
+            </ons-col>
+            <ons-col>
+              <div class="name">
+                VINITA BALI
+              </div>
+              <div class="location">
+                 Former Managing Director
+              </div>
+              <div class="desc">
+                Britannia Industries
+              </div>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+        </ons-list-item>
+
+       
+         <ons-list-item modifier="chevron" class="list-item-container" ng-click ="show('dialog4.html')">
+          <ons-row>&nbsp;
+            <ons-col width="100px">
+              <img src="images/Thomas.png" width = "90">
+            </ons-col>
+            <ons-col>
+              <div class="name">
+                DR. THOMAS COLACOT
+              </div>
+              <div class="location">
+                 R&D Manager Homogenous Catalysis (Global) at 
+              </div>
+              <div class="desc">
+                Johnson Matthey
+              </div>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+        </ons-list-item>
+
+        <ons-list-item modifier="chevron" class="list-item-container" ng-click ="show('dialog5.html')">
+          <ons-row>&nbsp;
+            <ons-col width="100px">
+              <img src="images/Ranjini.png" width = "90">
+            </ons-col>
+            <ons-col>
+              <div class="name">
+                Ranjini Manian
+              </div>
+              <div class="location">
+                 CEO
+              </div>
+              <div class="desc">
+                Global Adjustments
+              </div>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+        </ons-list-item>
+
+             <ons-list-item modifier="chevron" class="list-item-container" ng-click ="show('dialog6.html')">
+          <ons-row>&nbsp;
+            <ons-col width="100px">
+              <img src="images/Bapna.png" width = "90">
+            </ons-col>
+            <ons-col>
+              <div class="name">
+                Dr. Deepak Bapna
+              </div>
+              <div class="location">
+                Vice President Technology
+              </div>
+              <div class="desc">
+               VISA         
+              </div>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+        </ons-list-item>
+
+      </ons-list>
+
+<ons-template id="dialog1.html">
+  <ons-dialog var="dialog" modifier="material" cancelable>
+    
+    <div align = "center" style = "font-family: 'Helvetica';font-size: 17px;float:center; background: #DCDCDC; ">
+<strong>
+The Real Right Stuff: Glimpses of NASA Astronaut Training
+</strong>
+
+
+</div>
+
+<div align = "center" style = "font-family: 'Helvetica';font-size: 11px;float:center; padding: 15px 0;">
+     
+<strong> Date and Time </strong> : 24th Jan, 11:00am-12:30pm
+</br>
+<strong>Venue </strong>: Central Lecture Theatre (CLT)
+</br>
+<strong>Bio </strong>: Dr. Kamlesh Lulla’s distinguished career at NASA spans 27 years where he has served as a chief scientist for earth observation for space shuttle and international space station programs and directed training of NASA astronauts in earth observation sciences and earth science payloads.
+ 
+</br>
+
+    </div>
+
+  </ons-dialog>
+</ons-template>
+
+
+
+
+
+    </ons-page>
+
+  </body>
+</html>
