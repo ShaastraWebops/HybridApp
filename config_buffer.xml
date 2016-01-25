@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" id="com.shaastra.release" version="1.0.4">
+<widget xmlns="http://www.w3.org/ns/widgets" id="com.shaastra.release" version="1.0.3">
   <name>Shaastra 2016</name>
   <description/>
   <author/>
@@ -32,6 +32,9 @@
   <preference name="UIWebViewDecelerationSpeed" value="normal"/>
   <preference name="monaca:targetFamilyiPhone" value="1"/>
   <preference name="monaca:targetFamilyiPad" value="1"/>
+  <preference name="monaca:MonacaBackendUrl" value="https://cloud.monaca.mobi/json-rpc/"/>
+  <preference name="monaca:MonacaBackendId" value="56a19e74fd1734ec460dccfa"/>
+  <preference name="monaca:MonacaBackendApiKey" value="f9c6e34fdcb43eeb10cff6b913ae260d590a48cec9fb49ea928a92d6f5ab018f"/>
   <preference name="monaca:SenderId" value="36783241052"/>
   <access origin="*"/>
   <access origin="tel:*"/>

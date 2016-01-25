@@ -184,6 +184,27 @@ module.controller('eventlist',function($scope, $http,$rootScope,localStorageServ
         return alc > blc ? 1 : alc < blc ? -1 : 0;
       });
     $scope.events=events;
+    $http.get('http://shaastra.org:8001/api/eventLists/events/'+currid).success(function(response) 
+  {
+       $scope.currinfo=response.info;
+       $scope.currname=response.title;
+       //console.log($scope.currinfo);
+       imgid=response.imageid;
+       imgname=response.imagename;
+       $scope.currimage= "http://shaastra.org:8001/api/uploads/"+imgid+"/"+imgname;
+       events = response.events;
+       console.log("sort");
+       events.sort(function(a,b){
+       var alc = a.name.toLowerCase(), blc = b.name.toLowerCase();
+        return alc > blc ? 1 : alc < blc ? -1 : 0;
+      });
+       $scope.events=events;
+       $scope.events=response.events;
+       console.log($scope.events);
+       //$scope.message = 'Loading...';
+       localStorageService.set(currid,response);
+       //console.log(JSON.stringify(response));
+  })
 
   }
   else
